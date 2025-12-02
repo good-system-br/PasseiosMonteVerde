@@ -32,17 +32,24 @@
                     <a href="pages/section.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">História</a>
                     <a href="pages/section1.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Passeios</a>
                 </nav>
-                <div class="flex w-10 items-center justify-end md:hidden">
-                    <button id="menuBtn" class="flex h-10 w-10 items-center justify-center rounded-full bg-transparent text-gray-900 dark:text-gray-100">
-                        <span class="material-symbols-outlined text-2xl">menu</span>
+                <div class="flex w-12 items-center justify-end md:hidden">
+                    <button id="menuBtn" aria-label="Abrir menu" class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur-md text-gray-900 dark:text-gray-100 shadow-md active:scale-95 transition">
+                        <span id="menuIcon" class="material-symbols-outlined text-3xl">menu</span>
                     </button>
                 </div>
             </div>
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden flex-col bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-700">
-                <a href="pages/galeria.html" class="py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Galeria</a>
-                <a href="pages/section.html" class="py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">História</a>
-                <a href="pages/section1.html" class="py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Passeios</a>
+            <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"></div>
+            <div id="mobileMenu" class="hidden md:hidden flex-col bg-white/95 dark:bg-gray-900/95 p-4 border-t border-gray-200 dark:border-gray-700 shadow-2xl rounded-b-2xl origin-top animate-[menuClose_200ms_ease-out]">
+                <a href="pages/galeria.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined">photo_library</span> Galeria
+                </a>
+                <a href="pages/section.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined">history</span> História
+                </a>
+                <a href="pages/section1.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined">map</span> Passeios
+                </a>
             </div>
         </header>
         <main class="flex-grow">
@@ -198,20 +205,67 @@
             <a href="https://wa.me/" target="_blank"
                 class="flex cursor-pointer items-center justify-center rounded-full h-16 w-16 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 floating"
                 style="background:linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
-                <span class="text-white text-4xl">💬</span>
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" d="M27.999 4.001A15.915 15.915 0 0 0 16.033 0C7.249.005.104 7.152.11 15.936c.002 2.801.746 5.53 2.156 7.926L0 32l8.34-2.182a16.026 16.026 0 0 0 7.693 1.967h.006c8.784-.005 15.93-7.152 15.934-15.936A15.89 15.89 0 0 0 27.999 4.001Zm-11.96 24.723h-.005a13.154 13.154 0 0 1-6.705-1.834l-.48-.285-4.949 1.297 1.324-4.826-.313-.496a13.113 13.113 0 0 1-2.02-7.06C2.886 8.789 8.77 2.902 16.033 2.9a13.12 13.12 0 0 1 13.123 13.117c-.003 7.262-5.89 13.106-13.116 13.107Zm7.196-9.811c-.394-.197-2.316-1.142-2.674-1.273-.359-.133-.62-.197-.883.197-.26.394-1.015 1.273-1.246 1.536-.23.263-.461.296-.855.099-.394-.197-1.661-.611-3.164-1.948-1.17-1.046-1.962-2.337-2.192-2.731-.23-.394-.025-.607.171-.804.176-.175.394-.46.593-.69.197-.23.263-.394.394-.658.131-.263.066-.493-.033-.69-.098-.197-.882-2.132-1.208-2.918-.317-.762-.64-.661-.882-.672-.23-.01-.493-.012-.756-.012-.263 0-.69.099-1.052.493-.362.394-1.384 1.353-1.384 3.297s1.418 3.823 1.616 4.087c.197.263 2.79 4.258 6.767 5.957.946.408 1.686.651 2.262.834.95.302 1.818.26 2.505.157.764-.114 2.316-.946 2.64-1.86.324-.914.324-1.695.23-1.86-.095-.165-.362-.263-.756-.46Z"/>
+                </svg>
             </a>
             <div class="absolute inset-0 rounded-full animate-ping opacity-75" style="background:#25D366;"></div>
         </div>
         <script>
-        // Mobile menu toggle
+        // Mobile menu: animated, icon toggle, overlay, scroll lock
         document.addEventListener('DOMContentLoaded', function() {
             const menuBtn = document.getElementById('menuBtn');
+            const menuIcon = document.getElementById('menuIcon');
             const mobileMenu = document.getElementById('mobileMenu');
-            if(menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
+            const overlay = document.getElementById('menuOverlay');
+
+            // Inject keyframes for open/close if not present
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes menuOpen { from { transform: scaleY(0.9); opacity: 0 } to { transform: scaleY(1); opacity: 1 } }
+                @keyframes menuClose { from { transform: scaleY(1); opacity: 1 } to { transform: scaleY(0.9); opacity: 0 } }
+            `;
+            document.head.appendChild(style);
+
+            function openMenu() {
+                mobileMenu.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+                mobileMenu.style.animation = 'menuOpen 200ms ease-out forwards';
+                menuIcon.textContent = 'close';
+                menuBtn.setAttribute('aria-label', 'Fechar menu');
+                document.body.style.overflow = 'hidden';
             }
+
+            function closeMenu() {
+                mobileMenu.style.animation = 'menuClose 200ms ease-out forwards';
+                setTimeout(() => mobileMenu.classList.add('hidden'), 180);
+                overlay.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+                menuBtn.setAttribute('aria-label', 'Abrir menu');
+                document.body.style.overflow = '';
+            }
+
+            function toggleMenu() {
+                if (mobileMenu.classList.contains('hidden')) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            }
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', toggleMenu);
+            }
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
+            }
+
+            // Close on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    closeMenu();
+                }
+            });
         });
         </script>
     </div>
