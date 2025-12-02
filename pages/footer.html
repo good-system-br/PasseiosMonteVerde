@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rodapé do Site - Monte Verde Aventuras</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/footer.js"></script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root"
+        style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+        <!-- CTASection (Modified for Newsletter) -->
+        <div class="bg-background-dark text-text-primary px-4 py-16 sm:px-6 lg:px-8">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Receba ofertas exclusivas</h2>
+                <p class="mt-4 text-text-primary/80">Fique por dentro das nossas novidades e promoções especiais para
+                    sua próxima aventura em Monte Verde.</p>
+                <form class="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <label class="sr-only" for="email-address">Endereço de e-mail</label>
+                    <input autocomplete="email"
+                        class="w-full rounded-lg border-0 bg-white/10 px-5 py-3 text-white placeholder-text-primary/60 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                        id="email-address" name="email" placeholder="Seu melhor e-mail" required="" type="email" />
+                    <button
+                        class="flex-shrink-0 rounded-lg bg-primary px-5 py-3 text-base font-semibold text-text-cta shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        type="submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+        <!-- Footer (Modified) -->
+        <footer class="bg-background-dark text-text-primary">
+            <div class="relative px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+                <!-- Background image with overlay -->
+                <div class="absolute inset-0">
+                    <img alt="Paisagem de Monte Verde com montanhas e névoa ao amanhecer."
+                        class="h-full w-full object-cover"
+                        data-alt="Paisagem de Monte Verde com montanhas e névoa ao amanhecer."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo4u2M7vR8dcCS0smFTYr0b12kPw6akazzBXop2Ch1_qLA-AGB7T2EgNRmBYk851Tj-gojAIuGhzxaStj82BbRkXENpCI0icNmofVTSeGUpA4VTtvhWbYBx-SCXg9r5gWi1cDdLNyRedi-OmECmLgRDJxt8xFmdum_R_S0iarbaGfCVwC3C1P9-DIWK_kx41pbKxSwqiShERcLjtAXU0yiSU_ZDzSv8jSjTI0DMA3hp1H4BlDKXyzFJIysN039lw_d2jUFd9B-3RiY" />
+                    <div class="absolute inset-0 bg-background-dark/90"></div>
+                </div>
+                <div class="relative mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Bloco 1: Logo e Slogan -->
+                    <div class="flex flex-col items-start gap-4">
+                        <a class="text-2xl font-bold" href="#">Monte Verde Aventuras</a>
+                        <p class="text-text-primary/80">Sua jornada inesquecível começa aqui.</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a class="text-text-primary/80 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">alternate_email</span></a>
+                            <a class="text-text-primary/80 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">public</span></a>
+                            <a class="text-text-primary/80 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">call</span></a>
+                        </div>
+                    </div>
+                    <!-- Bloco 2: Explore -->
+                    <div>
+                        <h3 class="font-semibold tracking-wider uppercase text-text-secondary">Explore</h3>
+                        <ul class="mt-4 space-y-3">
+                            <li><a class="text-base text-text-primary/80 hover:text-primary" href="#">Início</a></li>
+                            <li><a class="text-base text-text-primary/80 hover:text-primary" href="#">Todos os
+                                    Passeios</a></li>
+                            <li><a class="text-base text-text-primary/80 hover:text-primary" href="#">Pacotes
+                                    Especiais</a></li>
+                            <li><a class="text-base text-text-primary/80 hover:text-primary" href="#">Sobre Nós</a></li>
+                            <li><a class="text-base text-text-primary/80 hover:text-primary" href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <!-- Bloco 3: Contato -->
+                    <div>
+                        <h3 class="font-semibold tracking-wider uppercase text-text-secondary">Contato</h3>
+                        <ul class="mt-4 space-y-3">
+                            <li class="flex items-start">
+                                <span
+                                    class="material-symbols-outlined mr-3 flex-shrink-0 text-text-secondary">call</span>
+                                <a class="text-base text-text-primary/80 hover:text-primary"
+                                    href="tel:+5535912345678">(35) 91234-5678</a>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="material-symbols-outlined mr-3 flex-shrink-0 text-text-secondary">mail</span>
+                                <a class="text-base text-text-primary/80 hover:text-primary"
+                                    href="mailto:contato@mvadventuras.com.br">contato@mvadventuras.com.br</a>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="material-symbols-outlined mr-3 flex-shrink-0 text-text-secondary">location_on</span>
+                                <span class="text-base text-text-primary/80" data-location="Monte Verde, MG">Av. Monte
+                                    Verde, 123<br />Monte Verde, MG - Brasil</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Bloco 4: Conecte-se -->
+                    <div>
+                        <h3 class="font-semibold tracking-wider uppercase text-text-secondary">Siga nossa aventura</h3>
+                        <div class="mt-4 flex space-x-5">
+                            <a class="text-text-primary/80 hover:text-primary" href="#">
+                                <span class="sr-only">Instagram</span>
+                                <span class="material-symbols-outlined">photo_camera</span>
+                            </a>
+                            <a class="text-text-primary/80 hover:text-primary" href="#">
+                                <span class="sr-only">Facebook</span>
+                                <span class="material-symbols-outlined">social_leaderboard</span>
+                            </a>
+                            <a class="text-text-primary/80 hover:text-primary" href="#">
+                                <span class="sr-only">WhatsApp</span>
+                                <span class="material-symbols-outlined">chat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Linha Final: Copyright -->
+                <div class="mt-16 border-t border-white/10 pt-8 text-center">
+                    <p class="text-base text-text-primary/60">© 2024 Monte Verde Aventuras. Todos os direitos
+                        reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Página Inicial e Header Fixo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- Top App Bar - Fixed Header -->
+        <header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg">
+            <div class="flex items-center p-4">
+                <div class="flex size-10 shrink-0 items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl">landscape</span>
+                </div>
+                <h2 class="text-xl font-extrabold flex-1 text-gray-900 dark:text-gray-100 tracking-tight">Passeios Monte Verde</h2>
+                <nav class="hidden md:flex gap-6">
+                    <a href="pages/galeria.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Galeria</a>
+                    <a href="pages/section.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">História</a>
+                    <a href="pages/section1.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Passeios</a>
+                </nav>
+                <div class="flex w-10 items-center justify-end md:hidden">
+                    <button id="menuBtn" class="flex h-10 w-10 items-center justify-center rounded-full bg-transparent text-gray-900 dark:text-gray-100">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden flex-col bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-700">
+                <a href="pages/galeria.html" class="py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Galeria</a>
+                <a href="pages/section.html" class="py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">História</a>
+                <a href="pages/section1.html" class="py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Passeios</a>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="relative flex flex-col items-center justify-center min-h-[60vh] bg-cover bg-center rounded-xl shadow-lg mb-8" style='background-image: url("img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.12.jpeg");'>
+                <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+                <div class="relative z-10 flex flex-col items-center justify-center py-16 px-4 text-center">
+                    <h1 style="color:#222;font-size:2.2rem;font-weight:900;text-shadow:0 2px 8px #fff;" class="mb-2">Viva Monte Verde Como Nunca Antes</h1>
+                    <h2 style="color:#fff;font-size:1.2rem;font-weight:700;text-shadow:0 1px 4px #222;" class="mb-6">Passeios inesquecíveis com guias locais.</h2>
+                    <a href="#agendar" style="background:#228B22;color:#fff;font-weight:700;font-size:1.1rem;box-shadow:0 2px 8px #222;" class="inline-block rounded-full px-8 py-3 mt-2">Agendar Agora</a>
+                </div>
+            </section>
+            <!-- Cards Section: Passeios -->
+            <section class="max-w-7xl mx-auto px-4 py-8">
+                <h2 class="text-3xl font-extrabold text-center mb-8" style="color:#228B22;text-shadow:0 1px 4px #fff;">Nossos Passeios</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13.jpeg" alt="Passeio de Jipe" class="h-48 w-full object-cover">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-extrabold mb-2" style="color:#228B22;text-shadow:0 1px 4px #fff;">Passeio de Jipe</h3>
+                            <p class="text-gray-900 mb-4" style="font-weight:500;text-shadow:0 1px 4px #fff;">Explore trilhas e paisagens únicas com emoção e segurança.</p>
+                            <a href="#agendar" class="mt-auto inline-block font-bold rounded-full px-4 py-2 text-sm shadow hover:bg-primary/90 transition" style="background:#228B22;color:#fff;">Agendar</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <img src="img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21.jpeg" alt="Aventura de Quadriciclo" class="h-48 w-full object-cover">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-extrabold mb-2" style="color:#228B22;text-shadow:0 1px 4px #fff;">Aventura de Quadriciclo</h3>
+                            <p class="text-gray-900 mb-4" style="font-weight:500;text-shadow:0 1px 4px #fff;">Adrenalina e diversão em trilhas exclusivas para quadriciclos.</p>
+                            <a href="#agendar" class="mt-auto inline-block font-bold rounded-full px-4 py-2 text-sm shadow hover:bg-primary/90 transition" style="background:#228B22;color:#fff;">Agendar</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <img src="img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00.jpeg" alt="Fazenda Esperança" class="h-48 w-full object-cover">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-extrabold mb-2" style="color:#228B22;text-shadow:0 1px 4px #fff;">Fazenda Esperança</h3>
+                            <p class="text-gray-900 mb-4" style="font-weight:500;text-shadow:0 1px 4px #fff;">Conheça a história e a natureza exuberante da fazenda mais tradicional da região.</p>
+                            <a href="#agendar" class="mt-auto inline-block font-bold rounded-full px-4 py-2 text-sm shadow hover:bg-primary/90 transition" style="background:#228B22;color:#fff;">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Depoimentos -->
+            <section class="max-w-5xl mx-auto px-4 py-8">
+                <h2 class="text-2xl font-bold text-primary text-center mb-6" style="text-shadow:0 1px 4px #fff;">Depoimentos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl shadow p-6">
+                        <p class="text-gray-900 italic mb-2" style="font-weight:500;text-shadow:0 1px 4px #fff;">“Passeio incrível! Guias super atenciosos e paisagens de tirar o fôlego.”</p>
+                        <span class="text-primary font-bold">— Ana Paula</span>
+                    </div>
+                    <div class="bg-white rounded-xl shadow p-6">
+                        <p class="text-gray-900 italic mb-2" style="font-weight:500;text-shadow:0 1px 4px #fff;">“Monte Verde ficou ainda mais especial com essa experiência. Recomendo!”</p>
+                        <span class="text-primary font-bold">— João Silva</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Galeria Interativa -->
+            <section class="max-w-7xl mx-auto px-4 py-8">
+                <h2 class="text-2xl font-bold text-primary text-center mb-6" style="text-shadow:0 1px 4px #fff;">Galeria</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (1).jpeg" alt="Jipe" class="rounded-lg shadow hover:scale-105 transition cursor-pointer">
+                    <img src="img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21 (1).jpeg" alt="Quadriciclo" class="rounded-lg shadow hover:scale-105 transition cursor-pointer">
+                    <img src="img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00 (1).jpeg" alt="Fazenda" class="rounded-lg shadow hover:scale-105 transition cursor-pointer">
+                    <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (2).jpeg" alt="Jipe" class="rounded-lg shadow hover:scale-105 transition cursor-pointer">
+                </div>
+            </section>
+            <div class="h-24 bg-background-light dark:bg-background-dark"></div> <!-- Spacer for FAB -->
+                    <!-- Rodapé Informativo -->
+                    <footer class="bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-700 py-8 mt-8">
+                        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div class="text-gray-700 dark:text-gray-200 text-sm">© 2025 Passeios Monte Verde. Todos os direitos reservados.</div>
+                            <div class="flex gap-4">
+                                <a href="https://wa.me/" target="_blank" class="text-primary hover:underline">WhatsApp</a>
+                                <a href="#" class="text-primary hover:underline">Instagram</a>
+                                <a href="#" class="text-primary hover:underline">Facebook</a>
+                            </div>
+                        </div>
+                    </footer>
+        </main>
+        <!-- FAB - WhatsApp -->
+        <div class="fixed bottom-5 right-5 z-50">
+            <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 w-14 bg-primary text-background-dark shadow-lg">
+                <span class="material-symbols-outlined text-3xl"
+                    style="font-variation-settings: 'FILL' 1, 'wght' 400;">chat</span>
+            </button>
+        </div>
+        <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if(menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+        // Galeria modal (simples)
+        document.querySelectorAll('.galeria-interativa img').forEach(img => {
+            img.addEventListener('click', function() {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black/80 flex items-center justify-center z-50';
+                modal.innerHTML = `<img src='${img.src}' class='max-h-[80vh] rounded-lg shadow-xl'><button class='absolute top-8 right-8 text-white text-3xl font-bold' id='closeModal'>&times;</button>`;
+                document.body.appendChild(modal);
+                modal.querySelector('#closeModal').onclick = () => modal.remove();
+            });
+        });
+        </script>
+    </div>
+</body>
+
+</html>
