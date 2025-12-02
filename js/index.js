@@ -1,56 +1,99 @@
-
-// Menu responsivo: abre/fecha menu ao clicar no botão
-
+// Scroll Animations
 document.addEventListener('DOMContentLoaded', function() {
-	var menuBtn = document.querySelector('header button');
-	if (menuBtn) {
-		// Cria menu hamburguer dropdown
-		var menuDropdown = document.createElement('div');
-		menuDropdown.setAttribute('role', 'menu');
-		menuDropdown.setAttribute('aria-label', 'Menu de navegação');
-		menuDropdown.style.position = 'absolute';
-		menuDropdown.style.top = '60px';
-		menuDropdown.style.right = '16px';
-		menuDropdown.style.background = '#fff';
-		menuDropdown.style.border = '2px solid #2bee79';
-		menuDropdown.style.borderRadius = '12px';
-		menuDropdown.style.boxShadow = '0 4px 16px rgba(46,190,121,0.18)';
-		menuDropdown.style.display = 'none';
-		menuDropdown.style.zIndex = '1000';
-		menuDropdown.style.minWidth = '180px';
-		menuDropdown.style.animation = 'fadeInMenu 0.3s';
-		menuDropdown.innerHTML = `
-			<a href="pages/galeria.html" style="display:block;padding:14px 28px;color:#111;text-decoration:none;font-weight:bold;">Galeria</a>
-			<a href="pages/section.html" style="display:block;padding:14px 28px;color:#111;text-decoration:none;font-weight:bold;">História</a>
-			<a href="pages/section1.html" style="display:block;padding:14px 28px;color:#111;text-decoration:none;font-weight:bold;">Passeios</a>
-			<a href="pages/section2.html" style="display:block;padding:14px 28px;color:#111;text-decoration:none;font-weight:bold;">Contato</a>
-		`;
-		document.body.appendChild(menuDropdown);
+	// Intersection Observer para animações ao scroll
+	const observerOptions = {
+		threshold: 0.1,
+		rootMargin: '0px 0px -50px 0px'
+	};
 
-		// Animação CSS
-		var style = document.createElement('style');
-		style.innerHTML = `@keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }`;
-		document.head.appendChild(style);
-
-		menuBtn.addEventListener('click', function(e) {
-			e.stopPropagation();
-			menuDropdown.style.display = menuDropdown.style.display === 'none' ? 'block' : 'none';
-		});
-
-		// Fecha menu ao clicar fora ou ao clicar em link
-		document.addEventListener('click', function(e) {
-			if (menuDropdown.style.display === 'block' && !menuDropdown.contains(e.target) && e.target !== menuBtn) {
-				menuDropdown.style.display = 'none';
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.style.opacity = '1';
+				entry.target.style.transform = 'translateY(0)';
 			}
 		});
-		menuDropdown.querySelectorAll('a').forEach(function(link) {
-			link.addEventListener('click', function() {
-				menuDropdown.style.display = 'none';
-			});
+	}, observerOptions);
+
+	// Observar elementos com animação
+	document.querySelectorAll('.card-hover, .fade-in, .fade-in-delay-1, .fade-in-delay-2').forEach(el => {
+		el.style.opacity = '0';
+		el.style.transform = 'translateY(30px)';
+		el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+		observer.observe(el);
+	});
+
+	// Parallax effect no hero
+	const hero = document.querySelector('section[style*="background-image"]');
+	if (hero) {
+		window.addEventListener('scroll', () => {
+			const scrolled = window.pageYOffset;
+			const parallax = scrolled * 0.5;
+			hero.style.backgroundPositionY = parallax + 'px';
 		});
-		// Acessibilidade: fecha com ESC
-		document.addEventListener('keydown', function(e) {
-			if (e.key === 'Escape') menuDropdown.style.display = 'none';
+	}
+
+	// Smooth scroll para âncoras
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function(e) {
+			const href = this.getAttribute('href');
+			if (href !== '#' && document.querySelector(href)) {
+				e.preventDefault();
+				document.querySelector(href).scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
+		});
+	});
+
+	// Lazy loading para imagens
+	const imgObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				const img = entry.target;
+				img.src = img.dataset.src || img.src;
+				img.classList.add('loaded');
+				imgObserver.unobserve(img);
+			}
+		});
+	});
+
+	document.querySelectorAll('img').forEach(img => {
+		imgObserver.observe(img);
+	});
+
+	// Adicionar efeito ripple nos botões
+	document.querySelectorAll('button, a[href*="agendar"]').forEach(button => {
+		button.addEventListener('click', function(e) {
+			const ripple = document.createElement('span');
+			const rect = this.getBoundingClientRect();
+			const size = Math.max(rect.width, rect.height);
+			const x = e.clientX - rect.left - size / 2;
+			const y = e.clientY - rect.top - size / 2;
+
+			ripple.style.width = ripple.style.height = size + 'px';
+			ripple.style.left = x + 'px';
+			ripple.style.top = y + 'px';
+			ripple.classList.add('ripple');
+
+			this.appendChild(ripple);
+
+			setTimeout(() => ripple.remove(), 600);
+		});
+	});
+
+	// Header transparente ao scroll
+	const header = document.querySelector('header');
+	if (header) {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 50) {
+				header.style.background = 'linear-gradient(135deg, rgba(34,139,34,0.95) 0%, rgba(26,107,26,0.95) 100%)';
+				header.style.backdropFilter = 'blur(10px)';
+			} else {
+				header.style.background = 'linear-gradient(135deg, #228B22 0%, #1a6b1a 100%)';
+				header.style.backdropFilter = 'none';
+			}
 		});
 	}
 });
