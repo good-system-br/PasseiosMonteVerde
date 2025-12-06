@@ -21,50 +21,54 @@
 <body class="font-display bg-background-light dark:bg-background-dark">
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
         <!-- Top App Bar - Fixed Header -->
-        <header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg">
-            <div class="flex items-center p-4">
-                <div class="flex items-center shrink-0 mr-3">
-                    <img src="img/logo.png" alt="Passeios Monte Verde" class="h-10 w-10 rounded-full shadow-md" />
+        <header class="sticky top-0 z-50 w-full bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 text-white backdrop-blur-sm shadow-xl">
+            <div class="max-w-7xl mx-auto flex items-center gap-4 px-4 py-3">
+                <div class="flex items-center shrink-0 mr-2">
+                    <img src="img/logo.png" alt="Passeios Monte Verde" class="h-11 w-11 rounded-full shadow-lg ring-2 ring-white/40" />
                 </div>
-                <h2 class="text-xl font-extrabold flex-1 text-gray-900 dark:text-gray-100 tracking-tight">Monte Verde Passeios</h2>
-                <nav class="hidden md:flex gap-6">
-                    <a href="pages/galeria.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Galeria</a>
-                    <a href="pages/section.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">História</a>
-                    <a href="pages/section1.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Passeios</a>
+                <h2 class="text-lg sm:text-xl font-extrabold flex-1 tracking-tight text-white">Monte Verde Passeios</h2>
+                <nav class="hidden md:flex items-center gap-2 text-sm font-semibold">
+                    <a href="pages/galeria.html" class="px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition">Galeria</a>
+                    <a href="pages/section.html" class="px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition">História</a>
+                    <a href="#passeios" class="px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition">Passeios</a>
                 </nav>
                 <div class="flex w-12 items-center justify-end md:hidden">
-                    <button id="menuBtn" aria-label="Abrir menu" class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur-md text-gray-900 dark:text-gray-100 shadow-md active:scale-95 transition">
+                    <button id="menuBtn" aria-label="Abrir menu" class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 backdrop-blur-md text-white shadow-md active:scale-95 transition">
                         <span id="menuIcon" class="material-symbols-outlined text-3xl">menu</span>
                     </button>
                 </div>
             </div>
             <!-- Mobile Menu -->
             <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"></div>
-            <div id="mobileMenu" class="hidden md:hidden flex-col bg-white/95 dark:bg-gray-900/95 p-4 border-t border-gray-200 dark:border-gray-700 shadow-2xl rounded-b-2xl origin-top animate-[menuClose_200ms_ease-out]">
-                <a href="pages/galeria.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
+            <div id="mobileMenu" class="hidden md:hidden flex-col bg-white text-gray-900 p-4 border-t border-gray-200 shadow-2xl rounded-b-2xl origin-top animate-[menuClose_200ms_ease-out]">
+                <a href="pages/galeria.html" class="py-3 px-2 font-bold flex items-center gap-2 hover:text-emerald-700">
                     <span class="material-symbols-outlined">photo_library</span> Galeria
                 </a>
-                <a href="pages/section.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
+                <a href="pages/section.html" class="py-3 px-2 font-bold flex items-center gap-2 hover:text-emerald-700">
                     <span class="material-symbols-outlined">history</span> História
                 </a>
-                <a href="pages/section1.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
+                <a href="#passeios" class="py-3 px-2 font-bold flex items-center gap-2 hover:text-emerald-700">
                     <span class="material-symbols-outlined">map</span> Passeios
                 </a>
             </div>
         </header>
         <main class="flex-grow">
             <!-- Hero Section -->
-            <section class="relative flex flex-col items-center justify-center min-h-[70vh] bg-cover bg-center rounded-xl shadow-lg mb-8" style='background-image: url("img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.12.jpeg"); background-attachment: fixed;'>
-                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 rounded-xl"></div>
+            <section class="relative flex flex-col items-center justify-center min-h-[70vh] bg-cover bg-center rounded-3xl shadow-2xl mb-10 overflow-hidden" style='background-image: url("img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.12.jpeg"); background-attachment: fixed;'>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
                 <div class="relative z-10 flex flex-col items-center justify-center py-16 px-4 text-center fade-in">
-                    <h1 style="color:#fff;font-size:2.8rem;font-weight:900;text-shadow:0 4px 12px rgba(0,0,0,0.5);letter-spacing:-0.5px;" class="mb-4 animate-pulse">Viva Monte Verde Como Nunca Antes</h1>
-                    <h2 style="color:#fff;font-size:1.4rem;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,0.5);" class="mb-8 fade-in-delay-1">Passeios inesquecíveis com guias locais.</h2>
-                    <a href="#agendar" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;font-weight:700;font-size:1.2rem;box-shadow:0 4px 15px rgba(34,139,34,0.4);" class="inline-block rounded-full px-10 py-4 mt-2 floating hover:shadow-2xl transition-all duration-300 transform hover:scale-105">Agendar Agora</a>
+                    <p class="text-sm uppercase tracking-[0.2em] text-white/80 mb-3">Aventura guiada em Monte Verde</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white drop-shadow-xl mb-4 leading-tight">Viva Monte Verde Como Nunca Antes</h1>
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-white/90 drop-shadow-md mb-8 fade-in-delay-1">Passeios inesquecíveis com guias locais e segurança total.</h2>
+                    <a href="#agendar" class="inline-flex items-center gap-3 rounded-full px-8 sm:px-10 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Agendar Agora <span class="material-symbols-outlined text-xl">arrow_forward</span></a>
                 </div>
             </section>
             <!-- Cards Section: Passeios -->
-            <section class="max-w-7xl mx-auto px-4 py-12">
-                <h2 class="text-4xl font-extrabold text-center mb-12 fade-in" style="color:#228B22;text-shadow:0 2px 6px rgba(255,255,255,0.8);background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Nossos Passeios</h2>
+            <section id="passeios" class="max-w-7xl mx-auto px-4 py-12">
+                <div class="text-center mb-12">
+                    <p class="text-emerald-600 font-semibold uppercase tracking-[0.2em] text-xs">Escolha sua aventura</p>
+                    <h2 class="text-4xl font-extrabold text-gray-900 mt-3 fade-in">Nossos Passeios</h2>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
                     <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative group fade-in" style="backdrop-filter: blur(10px);">
@@ -129,7 +133,10 @@
             </section>
             <!-- Galeria Interativa -->
             <section class="max-w-7xl mx-auto px-4 py-12">
-                <h2 class="text-4xl font-extrabold text-center mb-12 fade-in" style="color:#228B22;background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Galeria de Momentos</h2>
+                <div class="text-center mb-12">
+                    <p class="text-emerald-600 font-semibold uppercase tracking-[0.2em] text-xs">Momentos</p>
+                    <h2 class="text-4xl font-extrabold text-gray-900 mt-3 fade-in">Galeria de Momentos</h2>
+                </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer">
                         <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (1).jpeg" alt="Jipe" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
@@ -176,7 +183,7 @@
                             <ul class="space-y-2">
                                 <li><a href="pages/galeria.html" class="text-white/80 hover:text-white transition-colors">Galeria</a></li>
                                 <li><a href="pages/section.html" class="text-white/80 hover:text-white transition-colors">História</a></li>
-                                <li><a href="pages/section1.html" class="text-white/80 hover:text-white transition-colors">Passeios</a></li>
+                                <li><a href="#passeios" class="text-white/80 hover:text-white transition-colors">Passeios</a></li>
                             </ul>
                         </div>
                         <div>
