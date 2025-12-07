@@ -108,13 +108,63 @@
                             >
                         </nav>
                         <div class="flex md:hidden">
-                            <button class="text-gray-800 dark:text-white">
-                                <span class="material-symbols-outlined">menu</span>
+                            <button
+                                id="mobile-menu-toggle"
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                                aria-label="Abrir menu de navegação"
+                            >
+                                <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
                             </button>
                         </div>
                     </div>
                 </div>
             </header>
+
+            <!-- MENU MOBILE -->
+            <nav
+                id="mobile-menu"
+                class="md:hidden fixed top-20 inset-x-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur border-b border-gray-200/80 dark:border-gray-800/80 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-200 ease-out shadow-lg"
+            >
+                <div class="px-4 pb-4 space-y-1">
+                    <a
+                        href="/index.html#jeep"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Jeep 4x4
+                    </a>
+                    <a
+                        href="/index.html#quadriciclo"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Quadriciclo
+                    </a>
+                    <a
+                        href="/index.html#fazenda"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Fazenda
+                    </a>
+                    <a
+                        href="/index.html#depoimentos"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Depoimentos
+                    </a>
+                    <a
+                        href="/index.html#galeria"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Galeria
+                    </a>
+                    <a
+                        href="https://api.whatsapp.com/send?phone=5535998158435"
+                        target="_blank"
+                        class="mt-2 flex items-center justify-center gap-2 w-full bg-primary text-white font-semibold py-2.5 px-4 rounded-md shadow-md hover:bg-primary-darker transition-colors"
+                    >
+                        <span>Fale Conosco</span>
+                    </a>
+                </div>
+            </nav>
 
             <main class="pt-24">
                 <!-- HERO JEPP DETALHE -->
@@ -537,6 +587,49 @@
 
         <script>
             (function () {
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+                if (toggleButton && mobileMenu && mobileMenuIcon) {
+                    let isOpen = false;
+
+                    const setMenu = (open) => {
+                        isOpen = open;
+                        if (isOpen) {
+                            mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                            mobileMenu.classList.add('translate-y-0', 'opacity-100');
+                            mobileMenuIcon.textContent = 'close';
+                            toggleButton.setAttribute('aria-label', 'Fechar menu de navegação');
+                        } else {
+                            mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                            mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                            mobileMenuIcon.textContent = 'menu';
+                            toggleButton.setAttribute('aria-label', 'Abrir menu de navegação');
+                        }
+                    };
+
+                    toggleButton.addEventListener('click', () => {
+                        setMenu(!isOpen);
+                    });
+
+                    mobileMenu.addEventListener('click', (event) => {
+                        if (event.target.closest('a')) {
+                            setMenu(false);
+                        }
+                    });
+
+                    window.addEventListener('resize', () => {
+                        if (window.innerWidth >= 768 && isOpen) {
+                            setMenu(false);
+                        }
+                    });
+                }
+            })();
+        </script>
+
+        <script>
+            (function () {
                 const figures = Array.from(document.querySelectorAll('#jeep-gallery figure'));
                 const lightbox = document.getElementById('lightbox');
                 const imgEl = document.getElementById('lightbox-image');
@@ -636,7 +729,10 @@
                     figure.setAttribute('aria-label', 'Abrir imagem em tela cheia');
                 });
 
-                btnClose.addEventListener('click', closeLightbox);
+                btnClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeLightbox();
+                });
                 btnNext.addEventListener('click', showNext);
                 btnPrev.addEventListener('click', showPrev);
 

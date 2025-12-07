@@ -129,13 +129,61 @@
               >
             </nav>
             <div class="flex md:hidden">
-              <button class="text-gray-800 dark:text-white">
-                <span class="material-symbols-outlined">menu</span>
+              <button
+                id="mobile-menu-toggle"
+                class="text-gray-800 dark:text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-label="Abrir menu de navegação"
+              >
+                <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
               </button>
             </div>
           </div>
         </div>
       </header>
+      <nav
+        id="mobile-menu"
+        class="md:hidden fixed top-20 inset-x-0 bg-background-light dark:bg-background-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-200 z-40"
+      >
+        <div class="container mx-auto px-4 py-4 space-y-3">
+          <a
+            href="#jeep"
+            class="block text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary"
+          >
+            Jeep 4x4
+          </a>
+          <a
+            href="#quadriciclo"
+            class="block text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary"
+          >
+            Quadriciclo
+          </a>
+          <a
+            href="#fazenda"
+            class="block text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary"
+          >
+            Fazenda
+          </a>
+          <a
+            href="#depoimentos"
+            class="block text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary"
+          >
+            Depoimentos
+          </a>
+          <a
+            href="#galeria"
+            class="block text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary"
+          >
+            Galeria
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=5535998158435"
+            target="_blank"
+            class="mt-2 inline-flex w-full items-center justify-center bg-primary text-white font-semibold py-2 px-4 rounded shadow-md hover:bg-primary-darker"
+          >
+            Fale Conosco
+          </a>
+        </div>
+      </nav>
       <main>
         <section
           class="hero-bg text-white min-h-screen flex items-center justify-center pt-20"
@@ -186,7 +234,7 @@
                 <img
                   alt="Jeep 4x4 em uma trilha de terra"
                   class="w-full h-56 object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbodtt8YjN37bNv6vqgtbsZ7syAljXmhmAXWcuxuk4YKp9wqWjGWIf1XaX6naiNK4CwX6-hb2eu_3zaOhYjn92K2HGM__KZJPGr2cZVdMGZ5NaALBVDYpQNN0J3ns4uvrgSJtLVnBhiDEXw1WZsU8ty6ZQbmuvLu875ternL4fpspU-wBiq1esnzQT11G9cX3pORltjPU76c0wEjEoDZL04NEnieAqmmFyiKUqbOAmr3RPlM_PxWxQ4O3Z4puGgvoPzMa5snZf3Ng"
+                  src="./images/fazenda_esperanca/fazenda_esperanca1.jpeg"
                 />
                 <div class="p-6">
                   <div class="flex items-center mb-2">
@@ -990,6 +1038,47 @@
     </div>
 
     <div id="reviews"></div>
+    <script>
+      (function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("mobile-menu-icon");
+        if (!toggle || !menu || !icon) return;
+
+        let isOpen = false;
+
+        function setMenu(open) {
+          isOpen = open;
+          if (open) {
+            menu.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
+            menu.classList.add("translate-y-0", "opacity-100");
+            icon.textContent = "close";
+          } else {
+            menu.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
+            menu.classList.remove("translate-y-0", "opacity-100");
+            icon.textContent = "menu";
+          }
+        }
+
+        toggle.addEventListener("click", () => {
+          setMenu(!isOpen);
+        });
+
+        // Fecha o menu ao clicar em qualquer link dele
+        menu.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            setMenu(false);
+          }
+        });
+
+        // Fecha o menu ao redimensionar para tela grande
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            setMenu(false);
+          }
+        });
+      })();
+    </script>
     <script>
       (function () {
         const track = document.getElementById("main-gallery-track");
