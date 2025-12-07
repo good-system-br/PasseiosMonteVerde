@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Passeio de Jeep 4x4 - Monte Verde Passeios</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#386641",
+                            "primary-darker": "#2A4C31",
+                            "background-light": "#F7F7F7",
+                            "background-dark": "#121212",
+                            "surface-light": "#FFFFFF",
+                            "surface-dark": "#1E1E1E",
+                            "text-light": "#1F2937",
+                            "text-dark": "#E5E7EB",
+                            "text-muted-light": "#6B7280",
+                            "text-muted-dark": "#9CA3AF",
+                        },
+                        fontFamily: {
+                            display: ["Roboto", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.5rem",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+    >
+        <div class="relative" id="root">
+            <!-- HEADER -->
+            <header
+                class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-md"
+            >
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-20">
+                        <a class="flex items-center" href="/index.html#inicio">
+                            <img
+                                alt="Monte Verde Passeios Logo"
+                                class="h-16 w-16 mr-4"
+                                src="../images/logo.png"
+                            />
+                            <span
+                                class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block"
+                                >Monte Verde Passeios</span
+                            >
+                        </a>
+                        <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#jeep"
+                                >Jeep 4x4</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#quadriciclo"
+                                >Quadriciclo</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#fazenda"
+                                >Fazenda</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#depoimentos"
+                                >Depoimentos</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#galeria"
+                                >Galeria</a
+                            >
+                            <a
+                                class="bg-primary text-white font-bold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-colors"
+                                href="https://api.whatsapp.com/send?phone=5535998158435"
+                                target="_blank"
+                                >Fale Conosco</a
+                            >
+                        </nav>
+                        <div class="flex md:hidden">
+                            <button class="text-gray-800 dark:text-white">
+                                <span class="material-symbols-outlined">menu</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="pt-24">
+                <!-- HERO JEPP DETALHE -->
+                <section class="py-16 bg-surface-light dark:bg-surface-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <p class="text-sm uppercase tracking-wide text-primary font-semibold mb-2">
+                                Detalhes do Passeio
+                            </p>
+                            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                                Jeep 4x4 em Monte Verde
+                            </h1>
+                            <p class="text-lg text-text-muted-light dark:text-text-muted-dark mb-6">
+                                Explore a Serra da Mantiqueira em um Jeep 4x4 confortável e seguro. Trilhas, mirantes,
+                                pontos gastronômicos e culturais em um roteiro pensado para quem quer viver Monte Verde ao máximo.
+                            </p>
+                            <div class="space-y-2 text-text-muted-light dark:text-text-muted-dark mb-6">
+                                <p><strong class="text-text-light dark:text-text-dark">Duração média:</strong> até 5 horas (dependendo da opção escolhida).</p>
+                                <p><strong class="text-text-light dark:text-text-dark">Saída:</strong> Base Monte Verde Passeios, Monte Verde - MG.</p>
+                                <p><strong class="text-text-light dark:text-text-dark">Contato/Reserva:</strong> WhatsApp +55 (35) 99815-8435.</p>
+                            </div>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=5535998158435&text=Ol%C3%A1%2C%20gostaria%20de%20informações%20sobre%20o%20passeio%20de%20Jeep%204x4"
+                                target="_blank"
+                                class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded shadow-lg hover:bg-primary-darker transition-transform transform hover:scale-105"
+                            >
+                                <span class="material-symbols-outlined mr-2">whatsapp</span>
+                                Reservar agora pelo WhatsApp
+                            </a>
+                        </div>
+                        <div class="relative h-72 sm:h-96 rounded-lg overflow-hidden shadow-2xl">
+                            <img
+                                src="../images/passeio_de_jeep/passeio_de_jeep1.jpeg"
+                                alt="Jeep 4x4 em trilha na Serra da Mantiqueira em Monte Verde"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <p class="font-semibold text-lg">Trilhas exclusivas com visual panorâmico</p>
+                                <p class="text-sm text-gray-100">Monte Verde Passeios • Jeep 4x4</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OPÇÕES DE PASSEIO -->
+                <section class="py-16 bg-background-light dark:bg-background-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                            Opções de Passeio de Jeep 4x4
+                        </h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <!-- Opção 1 -->
+                            <article class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-md flex flex-col">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    Expedição 4x4 - Pedra Redonda
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">
+                                    Roteiro completo até a famosa Pedra Redonda, uma das trilhas mais acessíveis e belas de
+                                    Monte Verde, com aproximadamente 1.990m de altitude e visual panorâmico da Serra da Mantiqueira.
+                                </p>
+                                <ul class="space-y-1 text-text-muted-light dark:text-text-muted-dark mb-4 text-sm">
+                                    <li><strong>Duração:</strong> 3h30</li>
+                                    <li><strong>Nível:</strong> Trilha leve (cerca de 20 minutos de caminhada)</li>
+                                </ul>
+                                <div class="mt-auto">
+                                    <p class="font-semibold text-text-light dark:text-text-dark mb-1">Roteiro inclui paradas em:</p>
+                                    <ul class="list-disc list-inside text-text-muted-light dark:text-text-muted-dark text-sm space-y-1">
+                                        <li>Pousada do Avião</li>
+                                        <li>Pousada do Castelo</li>
+                                        <li>Charcutaria</li>
+                                        <li>Fábrica de Sabonetes</li>
+                                        <li>Fábrica de Chocolate</li>
+                                        <li>Destilaria</li>
+                                    </ul>
+                                </div>
+                            </article>
+
+                            <!-- Opção 2 -->
+                            <article class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-md flex flex-col">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    City Tour Completo
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">
+                                    Um passeio cultural e gastronômico pelos principais pontos turísticos e sabores de Monte Verde,
+                                    ideal para quem quer conhecer a cidade com conforto e praticidade.
+                                </p>
+                                <ul class="space-y-1 text-text-muted-light dark:text-text-muted-dark mb-4 text-sm">
+                                    <li><strong>Duração:</strong> 2h30</li>
+                                </ul>
+                                <div class="mt-auto">
+                                    <p class="font-semibold text-text-light dark:text-text-dark mb-1">Roteiro inclui paradas em:</p>
+                                    <ul class="list-disc list-inside text-text-muted-light dark:text-text-muted-dark text-sm space-y-1">
+                                        <li>Mansão Gato de Botas</li>
+                                        <li>Pousada do Avião</li>
+                                        <li>Pousada do Castelo</li>
+                                        <li>Charcutaria</li>
+                                        <li>Manduca (fabricação própria de embutidos)</li>
+                                        <li>Fábrica de Sabonetes</li>
+                                        <li>Fábrica de Chocolate</li>
+                                        <li>Destilaria</li>
+                                    </ul>
+                                </div>
+                            </article>
+
+                            <!-- Opção 3 -->
+                            <article class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-md flex flex-col">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    Rota Fazenda Esperança (Jeep)
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">
+                                    Combinação perfeita entre aventura e natureza: saída de Jeep de Monte Verde até a Fazenda
+                                    Esperança, uma propriedade histórica no bairro Jaguari de Cima, ideal para passar o dia.
+                                </p>
+                                <ul class="space-y-1 text-text-muted-light dark:text-text-muted-dark mb-4 text-sm">
+                                    <li><strong>Duração:</strong> 5 horas</li>
+                                    <li><strong>Capacidade:</strong> até 4 pessoas por Jeep</li>
+                                </ul>
+                                <p class="text-text-muted-light dark:text-text-muted-dark text-sm mt-auto">
+                                    Possibilidade de incluir atividades na fazenda como caminhadas, banho de rio, visita ao museu
+                                    histórico e almoço típico mineiro (consultar disponibilidade no momento da reserva).
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GALERIA DE IMAGENS DO JEEP -->
+                <section class="py-16 bg-surface-light dark:bg-surface-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-10">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                                Galeria do Passeio de Jeep 4x4
+                            </h2>
+                            <p class="mt-2 text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+                                Veja registros reais dos passeios de Jeep 4x4: trilhas, mirantes, grupos animados e as paisagens
+                                de Monte Verde e região. Todas as imagens desta galeria são do passeio.
+                            </p>
+                        </div>
+                        <div class="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                            <!-- 36 imagens do diretório passeio_de_jeep -->
+              
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep1.jpeg" alt="Jeep 4x4 em trilha de terra em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep2.jpeg" alt="Grupo em frente ao Jeep 4x4 pronto para o passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep3.jpeg" alt="Vista panorâmica durante passeio de Jeep em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep4.jpeg" alt="Jeep 4x4 estacionado em mirante na Serra da Mantiqueira" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep5.jpeg" alt="Passageiros apreciando a vista durante passeio de Jeep" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep6.jpeg" alt="Jeep 4x4 atravessando estrada de terra em meio à natureza" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep7.jpeg" alt="Detalhe do Jeep 4x4 utilizado nos passeios em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep8.jpeg" alt="Família posando para foto próxima ao Jeep 4x4" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep9.jpeg" alt="Estrada de terra cercada por vegetação na região de Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep10.jpeg" alt="Grupo embarcando no Jeep para início do passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep11.jpeg" alt="Jeep passando por trilha em meio às árvores" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep12.jpeg" alt="Paisagem montanhosa vista durante o passeio de Jeep" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep13.jpeg" alt="Jeep 4x4 estacionado próximo a mirante em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep14.jpeg" alt="Grupo de amigos sorrindo ao lado do Jeep" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep15.jpeg" alt="Trecho íngreme da trilha percorrida pelo Jeep 4x4" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep16.jpeg" alt="Vista da floresta durante o passeio de Jeep em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep17.jpeg" alt="Participantes tirando fotos no mirante durante o passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep18.jpeg" alt="Jeep 4x4 em estrada de terra molhada após chuva" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep19.jpeg" alt="Detalhe da traseira do Jeep usado no passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep20.jpeg" alt="Pôr do sol visto durante o passeio de Jeep em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep21.jpeg" alt="Jeep contornando curva em estrada de serra" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep22.jpeg" alt="Vegetação típica da Serra da Mantiqueira ao redor da trilha" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep23.jpeg" alt="Grupo reunido para foto final do passeio de Jeep" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep24.jpeg" alt="Jeep passando próximo a riacho na região de Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep25.jpeg" alt="Participantes observando paisagem montanhosa durante parada do passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep26.jpeg" alt="Jeep pronto para saída em frente à base de Monte Verde Passeios" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep27.jpeg" alt="Estrada estreita em meio à mata fechada percorrida pelo Jeep" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep28.jpeg" alt="Jeep 4x4 subindo trecho íngreme de serra" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep29.jpeg" alt="Vista de vale e montanhas durante passeio de Jeep em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep30.jpeg" alt="Jeep estacionado em ponto alto com vista privilegiada" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep31.jpeg" alt="Detalhes internos do Jeep utilizado no passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep32.jpeg" alt="Trecho de mata fechada atravessado pelo Jeep 4x4" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep33.jpeg" alt="Passageiros registrando fotos de paisagem durante o passeio de Jeep" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep34.jpeg" alt="Céu azul e montanhas vistos do topo da trilha" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep35.jpeg" alt="Jeep retornando para Monte Verde após o passeio" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md">
+                                <img src="../images/passeio_de_jeep/passeio_de_jeep36.jpeg" alt="Foto final do grupo com o Jeep 4x4 em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- FOOTER -->
+            <footer
+                class="bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400 pt-16 pb-8"
+                id="contato"
+            >
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8"
+                    >
+                        <div class="lg:col-span-1">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                                Monte Verde Passeios
+                            </h3>
+                            <p class="text-text-muted-light dark:text-text-muted-dark text-sm mb-2">
+                                Passeios de Jeep 4x4, quadriciclo e experiências únicas na Serra da Mantiqueira.
+                            </p>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                WhatsApp: <a href="https://api.whatsapp.com/send?phone=5535998158435" target="_blank" class="text-primary font-semibold">(35) 99815-8435</a>
+                            </p>
+                        </div>
+                        <div class="md:col-span-1">
+                            <h4 class="text-md font-semibold text-gray-900 dark:text-white mb-4">
+                                Links rápidos
+                            </h4>
+                            <ul class="space-y-2 text-sm text-text-muted-light dark:text-text-muted-dark">
+                                <li><a href="/index.html#jeep" class="hover:text-primary">Jeep 4x4</a></li>
+                                <li><a href="/index.html#quadriciclo" class="hover:text-primary">Quadriciclo</a></li>
+                                <li><a href="/index.html#fazenda" class="hover:text-primary">Fazenda Esperança</a></li>
+                                <li><a href="/index.html#galeria" class="hover:text-primary">Galeria</a></li>
+                                <li><a href="/index.html#depoimentos" class="hover:text-primary">Depoimentos</a></li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-2 lg:col-span-2">
+                            <h4 class="text-md font-semibold text-gray-900 dark:text-white mb-4">
+                                Localização
+                            </h4>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-2">
+                                Base em Monte Verde, Camanducaia - MG.
+                            </p>
+                            <div class="aspect-video w-full rounded overflow-hidden shadow-md bg-gray-300">
+                                <iframe
+                                    class="w-full h-full border-0"
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.770589108425!2d-46.045!3d-22.861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc103f1694fca5%3A0xef5416e893de18e0!2sMonte%20Verde%2C%20Camanducaia%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                                    allowfullscreen=""
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center"
+                    >
+                        <p>© 2024 Monte Verde Passeios. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- WHATSAPP FLOAT -->
+            <a
+                aria-label="Fale conosco no WhatsApp"
+                class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-40"
+                href="https://api.whatsapp.com/send?phone=5535998158435"
+                target="_blank"
+            >
+                <svg
+                    class="h-8 w-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.414z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+    </body>
+</html>
