@@ -450,28 +450,28 @@
         >
             <button
                 id="lightbox-close"
-                class="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
+                class="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
                 aria-label="Fechar galeria"
             >
                 <span class="material-symbols-outlined text-3xl">close</span>
             </button>
             <button
                 id="lightbox-prev"
-                class="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
+                class="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
                 aria-label="Imagem anterior"
             >
                 <span class="material-symbols-outlined text-3xl">chevron_left</span>
             </button>
             <button
                 id="lightbox-next"
-                class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
+                class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
                 aria-label="Próxima imagem"
             >
                 <span class="material-symbols-outlined text-3xl">chevron_right</span>
             </button>
             <div class="max-w-5xl w-full px-4">
-                <div class="relative bg-black/60 rounded-lg overflow-hidden flex flex-col items-center justify-center">
-                    <img id="lightbox-image" src="" alt="" class="max-h-[80vh] w-auto object-contain" />
+                <div class="relative bg-black/60 rounded-lg overflow-hidden flex flex-col items-center justify-start max-h-[90vh] mt-10">
+                    <img id="lightbox-image" src="" alt="" class="max-h-[70vh] w-auto object-contain" />
                     <p id="lightbox-caption" class="text-sm text-gray-100 mt-3 mb-4 px-4 text-center"></p>
                     <p id="lightbox-counter" class="text-xs text-gray-300 mb-3"></p>
                 </div>
