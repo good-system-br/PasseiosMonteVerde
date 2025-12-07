@@ -492,6 +492,8 @@
                 if (!figures.length || !lightbox) return;
 
                 let currentIndex = 0;
+                const originalBodyOverflow = document.body.style.overflow;
+                const originalBodyTouchAction = document.body.style.touchAction;
 
                 const openLightbox = (index) => {
                     currentIndex = index;
@@ -502,6 +504,10 @@
                     imgEl.alt = img.alt || '';
                     captionEl.textContent = img.alt || '';
                     counterEl.textContent = `${currentIndex + 1} / ${figures.length}`;
+
+                    // Bloqueia scroll de fundo enquanto o lightbox estiver aberto
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.touchAction = 'none';
 
                     lightbox.classList.remove('pointer-events-none');
                     lightbox.setAttribute('aria-hidden', 'false');
@@ -516,6 +522,9 @@
                     setTimeout(() => {
                         lightbox.classList.add('pointer-events-none');
                         imgEl.src = '';
+                        // Restaura comportamento de scroll padrão ao fechar o lightbox
+                        document.body.style.overflow = originalBodyOverflow;
+                        document.body.style.touchAction = originalBodyTouchAction;
                     }, 200);
                 };
 
@@ -575,6 +584,8 @@
                 btnPrev.addEventListener('click', showPrev);
 
                 lightbox.addEventListener('click', (e) => {
+                    // Fecha apenas quando o clique é diretamente no fundo escuro,
+                    // não em elementos filhos (imagem, botões, etc.).
                     if (e.target === lightbox) {
                         closeLightbox();
                     }
