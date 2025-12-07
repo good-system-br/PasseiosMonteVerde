@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Galeria de Fotos - Passeios Monte Verde</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/galeria.css">
+    <script src="../js/galeria.js"></script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- Top App Bar -->
+        <header
+            class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm">
+            <div class="flex size-12 shrink-0 items-center">
+                <span class="material-symbols-outlined text-stone-800 dark:text-stone-200">arrow_back_ios_new</span>
+            </div>
+            <div class="flex-1 flex items-center justify-center">
+                <img src="../img/logo.png" alt="Passeios Monte Verde" class="h-8 w-8 mr-2 rounded-full shadow-md">
+                <h1 class="text-stone-800 dark:text-stone-200 text-lg font-bold leading-tight tracking-[-0.015em]">Galeria</h1>
+            </div>
+            <div class="flex w-12 items-center justify-end">
+                <button
+                    class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-stone-800 dark:text-stone-200 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+                    <span class="material-symbols-outlined">ios_share</span>
+                </button>
+            </div>
+        </header>
+        <!-- Image Grid -->
+        <main class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 pb-24">
+            <!-- Fazenda Esperança -->
+            <div class="gallery-item col-span-1 row-span-2 relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00 (1).jpeg" alt="Fazenda Esperança 1" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold text-lg">🌿 Fazenda Esperança</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00 (2).jpeg" alt="Fazenda Esperança 2" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Vista Panorâmica</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00.jpeg" alt="Fazenda Esperança 3" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Natureza Exuberante</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.01.jpeg" alt="Fazenda Esperança 4" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Aventura Rural</span>
+                </div>
+            </div>
+            <!-- Passeio de Jipe -->
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.12.jpeg" alt="Passeio de Jipe 1" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">🚙 Passeio de Jipe</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (1).jpeg" alt="Passeio de Jipe 2" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Trilhas Emocionantes</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (2).jpeg" alt="Passeio de Jipe 3" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Aventura 4x4</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (3).jpeg" alt="Passeio de Jipe 4" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Off-Road</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13.jpeg" alt="Passeio de Jipe 5" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Paisagens Incríveis</span>
+                </div>
+            </div>
+            <!-- Quadriciclos -->
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21 (1).jpeg" alt="Quadriciclos 1" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">🏍️ Quadriciclos</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21 (2).jpeg" alt="Quadriciclos 2" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Adrenalina Pura</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21.jpeg" alt="Quadriciclos 3" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Trilhas Exclusivas</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.22 (1).jpeg" alt="Quadriciclos 4" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Diversão Garantida</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.22.jpeg" alt="Quadriciclos 5" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Experiência Única</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.26.jpeg" alt="Quadriciclos 6" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Aventura Total</span>
+                </div>
+            </div>
+            <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer fade-in-scale">
+                <img src="../img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.31.jpeg" alt="Quadriciclos 7" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                    <span class="text-white font-bold">Monte Verde ATV</span>
+                </div>
+            </div>
+        </main>
+        <!-- Floating CTA Button -->
+        <footer
+            class="fixed bottom-0 left-0 w-full p-4 bg-gradient-to-t from-white/95 via-white/80 to-transparent backdrop-blur-sm">
+            <div class="flex gap-3">
+                <a href="../index.html"
+                    class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl h-14 px-5 text-base font-bold leading-normal shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;">
+                    <span class="truncate">🌲 Explore Nossos Passeios</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

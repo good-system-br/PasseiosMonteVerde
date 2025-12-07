@@ -1,274 +1,1094 @@
 <!DOCTYPE html>
-
-<html class="light" lang="pt-BR">
-
-<head>
+<html class="scroll-smooth" lang="pt-BR">
+  <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Página Inicial e Header Fixo</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap"
-        rel="stylesheet" />
+    <title>Monte Verde Passeios Landing Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
-</head>
-
-<body class="font-display bg-background-light dark:bg-background-dark">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-        <!-- Top App Bar - Fixed Header -->
-        <header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg">
-            <div class="flex items-center p-4">
-                <div class="flex items-center shrink-0 mr-3">
-                    <img src="img/logo.png" alt="Passeios Monte Verde" class="h-10 w-10 rounded-full shadow-md" />
-                </div>
-                <h2 class="text-xl font-extrabold flex-1 text-gray-900 dark:text-gray-100 tracking-tight">Monte Verde Passeios</h2>
-                <nav class="hidden md:flex gap-6">
-                    <a href="pages/galeria.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Galeria</a>
-                    <a href="pages/section.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">História</a>
-                    <a href="pages/section1.html" class="text-gray-700 dark:text-gray-200 hover:text-primary font-semibold">Passeios</a>
-                </nav>
-                <div class="flex w-12 items-center justify-end md:hidden">
-                    <button id="menuBtn" aria-label="Abrir menu" class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur-md text-gray-900 dark:text-gray-100 shadow-md active:scale-95 transition">
-                        <span id="menuIcon" class="material-symbols-outlined text-3xl">menu</span>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"></div>
-            <div id="mobileMenu" class="hidden md:hidden flex-col bg-white/95 dark:bg-gray-900/95 p-4 border-t border-gray-200 dark:border-gray-700 shadow-2xl rounded-b-2xl origin-top animate-[menuClose_200ms_ease-out]">
-                <a href="pages/galeria.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
-                    <span class="material-symbols-outlined">photo_library</span> Galeria
-                </a>
-                <a href="pages/section.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
-                    <span class="material-symbols-outlined">history</span> História
-                </a>
-                <a href="pages/section1.html" class="py-3 px-2 text-gray-800 dark:text-gray-100 hover:text-primary font-bold flex items-center gap-2">
-                    <span class="material-symbols-outlined">map</span> Passeios
-                </a>
-            </div>
-        </header>
-        <main class="flex-grow">
-            <!-- Hero Section -->
-            <section class="relative flex flex-col items-center justify-center min-h-[70vh] bg-cover bg-center rounded-xl shadow-lg mb-8" style='background-image: url("img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.12.jpeg"); background-attachment: fixed;'>
-                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 rounded-xl"></div>
-                <div class="relative z-10 flex flex-col items-center justify-center py-16 px-4 text-center fade-in">
-                    <h1 style="color:#fff;font-size:2.8rem;font-weight:900;text-shadow:0 4px 12px rgba(0,0,0,0.5);letter-spacing:-0.5px;" class="mb-4 animate-pulse">Viva Monte Verde Como Nunca Antes</h1>
-                    <h2 style="color:#fff;font-size:1.4rem;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,0.5);" class="mb-8 fade-in-delay-1">Passeios inesquecíveis com guias locais.</h2>
-                    <a href="#agendar" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;font-weight:700;font-size:1.2rem;box-shadow:0 4px 15px rgba(34,139,34,0.4);" class="inline-block rounded-full px-10 py-4 mt-2 floating hover:shadow-2xl transition-all duration-300 transform hover:scale-105">Agendar Agora</a>
-                </div>
-            </section>
-            <!-- Cards Section: Passeios -->
-            <section class="max-w-7xl mx-auto px-4 py-12">
-                <h2 class="text-4xl font-extrabold text-center mb-12 fade-in" style="color:#228B22;text-shadow:0 2px 6px rgba(255,255,255,0.8);background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Nossos Passeios</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
-                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative group fade-in" style="backdrop-filter: blur(10px);">
-                        <div class="overflow-hidden relative">
-                            <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13.jpeg" alt="Passeio de Jipe" class="h-56 w-full object-cover transition-all duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col relative">
-                            <div class="absolute -top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);box-shadow:0 4px 12px rgba(34,139,34,0.4);">
-                                <span class="text-white text-2xl">🚙</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold mb-3 mt-4" style="color:#228B22;">Passeio de Jipe</h3>
-                            <p class="text-gray-700 mb-4 flex-grow" style="font-weight:500;line-height:1.6;">Explore trilhas e paisagens únicas com emoção e segurança.</p>
-                            <a href="#agendar" class="mt-auto inline-block font-bold rounded-full px-6 py-3 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;">Agendar Agora</a>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative group fade-in-delay-1" style="backdrop-filter: blur(10px);">
-                        <div class="overflow-hidden relative">
-                            <img src="img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21.jpeg" alt="Aventura de Quadriciclo" class="h-56 w-full object-cover transition-all duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col relative">
-                            <div class="absolute -top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);box-shadow:0 4px 12px rgba(34,139,34,0.4);">
-                                <span class="text-white text-2xl">🏍️</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold mb-3 mt-4" style="color:#228B22;">Aventura de Quadriciclo</h3>
-                            <p class="text-gray-700 mb-4 flex-grow" style="font-weight:500;line-height:1.6;">Adrenalina e diversão em trilhas exclusivas para quadriciclos.</p>
-                            <a href="#agendar" class="mt-auto inline-block font-bold rounded-full px-6 py-3 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;">Agendar Agora</a>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative group fade-in-delay-2" style="backdrop-filter: blur(10px);">
-                        <div class="overflow-hidden relative">
-                            <img src="img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00.jpeg" alt="Fazenda Esperança" class="h-56 w-full object-cover transition-all duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col relative">
-                            <div class="absolute -top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);box-shadow:0 4px 12px rgba(34,139,34,0.4);">
-                                <span class="text-white text-2xl">🌿</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold mb-3 mt-4" style="color:#228B22;">Fazenda Esperança</h3>
-                            <p class="text-gray-700 mb-4 flex-grow" style="font-weight:500;line-height:1.6;">Conheça a história e a natureza exuberante da fazenda mais tradicional da região.</p>
-                            <a href="#agendar" class="mt-auto inline-block font-bold rounded-full px-6 py-3 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;">Agendar Agora</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Depoimentos -->
-            <section class="max-w-5xl mx-auto px-4 py-8">
-                <h2 class="text-2xl font-bold text-primary text-center mb-6" style="text-shadow:0 1px 4px #fff;">Depoimentos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-xl shadow p-6">
-                        <p class="text-gray-900 italic mb-2" style="font-weight:500;text-shadow:0 1px 4px #fff;">“Passeio incrível! Guias super atenciosos e paisagens de tirar o fôlego.”</p>
-                        <span class="text-primary font-bold">— Ana Paula</span>
-                    </div>
-                    <div class="bg-white rounded-xl shadow p-6">
-                        <p class="text-gray-900 italic mb-2" style="font-weight:500;text-shadow:0 1px 4px #fff;">“Monte Verde ficou ainda mais especial com essa experiência. Recomendo!”</p>
-                        <span class="text-primary font-bold">— João Silva</span>
-                    </div>
-                </div>
-            </section>
-            <!-- Galeria Interativa -->
-            <section class="max-w-7xl mx-auto px-4 py-12">
-                <h2 class="text-4xl font-extrabold text-center mb-12 fade-in" style="color:#228B22;background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Galeria de Momentos</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer">
-                        <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (1).jpeg" alt="Jipe" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
-                            <span class="text-white font-bold text-lg">Passeio de Jipe</span>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer">
-                        <img src="img/quadriciclos/WhatsApp Image 2025-11-30 at 11.32.21 (1).jpeg" alt="Quadriciclo" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
-                            <span class="text-white font-bold text-lg">Quadriciclo</span>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer">
-                        <img src="img/fazendaEsperança/WhatsApp Image 2025-11-30 at 12.08.00 (1).jpeg" alt="Fazenda" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
-                            <span class="text-white font-bold text-lg">Fazenda Esperança</span>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer">
-                        <img src="img/passeiodejipe/WhatsApp Image 2025-11-30 at 11.41.13 (2).jpeg" alt="Jipe" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
-                            <span class="text-white font-bold text-lg">Aventura</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-8">
-                    <a href="pages/galeria.html" class="inline-block font-bold rounded-full px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background:linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);color:#fff;">Ver Galeria Completa</a>
-                </div>
-            </section>
-            <!-- Rodapé Informativo -->
-            <footer class="mt-12 py-12" style="background:linear-gradient(135deg, #1a6b1a 0%, #228B22 100%);">
-                <div class="max-w-7xl mx-auto px-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                        <div>
-                            <h3 class="text-white font-bold text-xl mb-4 flex items-center">
-                                <span class="material-symbols-outlined mr-2">landscape</span>
-                                Passeios Monte Verde
-                            </h3>
-                            <p class="text-white/80">Aventuras inesquecíveis em meio à natureza exuberante de Monte Verde.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-lg mb-4">Links Rápidos</h4>
-                            <ul class="space-y-2">
-                                <li><a href="pages/galeria.html" class="text-white/80 hover:text-white transition-colors">Galeria</a></li>
-                                <li><a href="pages/section.html" class="text-white/80 hover:text-white transition-colors">História</a></li>
-                                <li><a href="pages/section1.html" class="text-white/80 hover:text-white transition-colors">Passeios</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-lg mb-4">Redes Sociais</h4>
-                            <div class="flex gap-4">
-                                <a href="https://wa.me/" target="_blank" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all transform hover:scale-110">
-                                    <span class="text-white text-xl">📱</span>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all transform hover:scale-110">
-                                    <span class="text-white text-xl">📷</span>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all transform hover:scale-110">
-                                    <span class="text-white text-xl">👍</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border-t border-white/20 pt-8 text-center">
-                        <p class="text-white/80">© 2025 Passeios Monte Verde. Todos os direitos reservados.</p>
-                    </div>
-                </div>
-            </footer>
-        </main>
-        <!-- FAB - WhatsApp -->
-        <div class="fixed bottom-8 right-8 z-50">
-            <a href="https://wa.me/" target="_blank"
-                class="flex cursor-pointer items-center justify-center rounded-full h-16 w-16 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 floating"
-                style="background:linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
-                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#ffffff" d="M27.999 4.001A15.915 15.915 0 0 0 16.033 0C7.249.005.104 7.152.11 15.936c.002 2.801.746 5.53 2.156 7.926L0 32l8.34-2.182a16.026 16.026 0 0 0 7.693 1.967h.006c8.784-.005 15.93-7.152 15.934-15.936A15.89 15.89 0 0 0 27.999 4.001Zm-11.96 24.723h-.005a13.154 13.154 0 0 1-6.705-1.834l-.48-.285-4.949 1.297 1.324-4.826-.313-.496a13.113 13.113 0 0 1-2.02-7.06C2.886 8.789 8.77 2.902 16.033 2.9a13.12 13.12 0 0 1 13.123 13.117c-.003 7.262-5.89 13.106-13.116 13.107Zm7.196-9.811c-.394-.197-2.316-1.142-2.674-1.273-.359-.133-.62-.197-.883.197-.26.394-1.015 1.273-1.246 1.536-.23.263-.461.296-.855.099-.394-.197-1.661-.611-3.164-1.948-1.17-1.046-1.962-2.337-2.192-2.731-.23-.394-.025-.607.171-.804.176-.175.394-.46.593-.69.197-.23.263-.394.394-.658.131-.263.066-.493-.033-.69-.098-.197-.882-2.132-1.208-2.918-.317-.762-.64-.661-.882-.672-.23-.01-.493-.012-.756-.012-.263 0-.69.099-1.052.493-.362.394-1.384 1.353-1.384 3.297s1.418 3.823 1.616 4.087c.197.263 2.79 4.258 6.767 5.957.946.408 1.686.651 2.262.834.95.302 1.818.26 2.505.157.764-.114 2.316-.946 2.64-1.86.324-.914.324-1.695.23-1.86-.095-.165-.362-.263-.756-.46Z"/>
-                </svg>
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-S+8y6kGgP1JtGvwxZmfZbV0Gooy2cwrRez2oJ6TP2PzefRg2fzGEylh4G6dkhOCi/hTyBC0bYl1qQhQki71Rug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#386641",
+              "primary-darker": "#2A4C31",
+              "background-light": "#F7F7F7",
+              "background-dark": "#121212",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E1E1E",
+              "text-light": "#1F2937",
+              "text-dark": "#E5E7EB",
+              "text-muted-light": "#6B7280",
+              "text-muted-dark": "#9CA3AF",
+            },
+            fontFamily: {
+              display: ["Roboto", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .hero-bg {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(https://lh3.googleusercontent.com/aida-public/AB6AXuDV3oOP8uTKQY_NbnNK9VhRX3NkxIEAdeWxWCpOu3Ulfbo7JlhZez78eCEUdDCgOsAQDjg-HGh1VjOxUHEEHT7cz6ca4bgSAMpw10XbAtMbD-Ia8Js8wN7bzK7g9BnDsFl8qP4g9J-m3yGBb5rXK65axRz2FkJU8_RtEYq6tOGm7TlaUc7Y9PthhajYkx-0ky8lmpmTMjs0xr6rexbGfuiJVPqKiRPobRVGndC9J3ST_dHltrhMhACtBlf9sc5JrllpdLLHjVz6BEo);
+        background-size: cover;
+        background-position: center;
+      }
+      .testimonial-card::before {
+        content: "“";
+        position: absolute;
+        top: 0.5rem;
+        left: 1rem;
+        font-size: 5rem;
+        color: #386641;
+        opacity: 0.1;
+        line-height: 1;
+      }
+      .gallery-item {
+        scroll-snap-align: center;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+  >
+    <div class="relative" id="root">
+      <header
+        class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-md"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <a class="flex items-center" href="#inicio">
+              <img
+                alt="Monte Verde Passeios Logo"
+                class="h-16 w-16 mr-4"
+                src="./images/logo.png"
+              />
+              <span
+                class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block"
+                >Passeios Monte Verde</span
+              >
             </a>
-            <div class="absolute inset-0 rounded-full animate-ping opacity-75" style="background:#25D366;"></div>
+            <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+              <a
+                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                href="#jeep"
+                >Jeep 4x4</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                href="#quadriciclo"
+                >Quadriciclo</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                href="#fazenda"
+                >Fazenda</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                href="#depoimentos"
+                >Depoimentos</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                href="#galeria"
+                >Galeria</a
+              >
+              <a
+                class="bg-primary text-white font-bold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-colors"
+                href="https://api.whatsapp.com/send?phone=5535998158435"
+                target="_blank"
+                >Fale Conosco</a
+              >
+            </nav>
+            <div class="flex md:hidden">
+              <button class="text-gray-800 dark:text-white">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+            </div>
+          </div>
         </div>
-        <script>
-        // Mobile menu: animated, icon toggle, overlay, scroll lock
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('menuBtn');
-            const menuIcon = document.getElementById('menuIcon');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('menuOverlay');
-
-            // Inject keyframes for open/close if not present
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes menuOpen { from { transform: scaleY(0.9); opacity: 0 } to { transform: scaleY(1); opacity: 1 } }
-                @keyframes menuClose { from { transform: scaleY(1); opacity: 1 } to { transform: scaleY(0.9); opacity: 0 } }
-            `;
-            document.head.appendChild(style);
-
-            function openMenu() {
-                mobileMenu.classList.remove('hidden');
-                overlay.classList.remove('hidden');
-                mobileMenu.style.animation = 'menuOpen 200ms ease-out forwards';
-                menuIcon.textContent = 'close';
-                menuBtn.setAttribute('aria-label', 'Fechar menu');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeMenu() {
-                mobileMenu.style.animation = 'menuClose 200ms ease-out forwards';
-                setTimeout(() => mobileMenu.classList.add('hidden'), 180);
-                overlay.classList.add('hidden');
-                menuIcon.textContent = 'menu';
-                menuBtn.setAttribute('aria-label', 'Abrir menu');
-                document.body.style.overflow = '';
-            }
-
-            function toggleMenu() {
-                if (mobileMenu.classList.contains('hidden')) {
-                    openMenu();
-                } else {
-                    closeMenu();
-                }
-            }
-
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', toggleMenu);
-            }
-            if (overlay) {
-                overlay.addEventListener('click', closeMenu);
-            }
-
-            // Close on ESC
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                    closeMenu();
-                }
-            });
-        });
-        </script>
+      </header>
+      <main>
+        <section
+          class="hero-bg text-white min-h-screen flex items-center justify-center pt-20"
+          id="inicio"
+        >
+          <div class="text-center px-4">
+            <h1
+              class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg"
+            >
+              Monte Verde Passeios: Aventura Inesquecível na Serra da
+              Mantiqueira
+            </h1>
+            <p
+              class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md"
+            >
+              Explore trilhas emocionantes de Jeep 4x4, sinta a adrenalina no
+              quadriciclo e descubra a história da Fazenda Esperança.
+            </p>
+            <a
+              class="mt-8 inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:bg-primary-darker transition-transform transform hover:scale-105"
+              href="#passeios"
+            >
+              Conheça Nossos Passeios
+            </a>
+          </div>
+        </section>
+        <section
+          class="py-16 sm:py-24 bg-surface-light dark:bg-surface-dark"
+          id="passeios"
+        >
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white"
+              >
+                Nossos Passeios
+              </h2>
+              <p
+                class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark"
+              >
+                Aventuras para todos os gostos e idades.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-background-light dark:bg-background-dark rounded shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <img
+                  alt="Jeep 4x4 em uma trilha de terra"
+                  class="w-full h-56 object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbodtt8YjN37bNv6vqgtbsZ7syAljXmhmAXWcuxuk4YKp9wqWjGWIf1XaX6naiNK4CwX6-hb2eu_3zaOhYjn92K2HGM__KZJPGr2cZVdMGZ5NaALBVDYpQNN0J3ns4uvrgSJtLVnBhiDEXw1WZsU8ty6ZQbmuvLu875ternL4fpspU-wBiq1esnzQT11G9cX3pORltjPU76c0wEjEoDZL04NEnieAqmmFyiKUqbOAmr3RPlM_PxWxQ4O3Z4puGgvoPzMa5snZf3Ng"
+                />
+                <div class="p-6">
+                  <div class="flex items-center mb-2">
+                    <span class="material-symbols-outlined text-primary mr-2"
+                      >directions_car</span
+                    >
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                      Passeio de Jeep 4x4
+                    </h3>
+                  </div>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-4"
+                  >
+                    Aventure-se por trilhas desafiadoras com vistas panorâmicas
+                    da Serra da Mantiqueira. Emoção e natureza em um só passeio.
+                  </p>
+                  <a
+                    class="font-semibold text-primary hover:underline"
+                    href="#jeep"
+                    >Ver detalhes →</a
+                  >
+                </div>
+              </div>
+              <div
+                class="bg-background-light dark:bg-background-dark rounded shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <img
+                  alt="Pessoa pilotando um quadriciclo em uma estrada de terra"
+                  class="w-full h-56 object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz838Ut9aEYYgrFlNxYzFXsLr9VtS7ctWm2vzL1AMN--SrkGnZAErlpv8eS5K_FfNkRwpYUDfXUUrGLOn75brelLI2YmBVSi31VH9rdx9MLzrBhQzNU9YJ-f7v_iD6mPjVxqM4v0k0dEpx_L9PM4dbSU3GUxrqHMISEfEzoierBQjPSX4afnrMhhtV75KpZkVJSAKPs7gEet41FZ3iewylOZS5gyhuPhORbkuAdPqrao9wr4Z7O1PACbuo_REQdfM4b5O3BTtKoMQ"
+                />
+                <div class="p-6">
+                  <div class="flex items-center mb-2">
+                    <span class="material-symbols-outlined text-primary mr-2"
+                      >two_wheeler</span
+                    >
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                      Passeio de Quadriciclo
+                    </h3>
+                  </div>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-4"
+                  >
+                    Sinta a liberdade e a adrenalina de pilotar um quadriciclo
+                    por caminhos de terra e paisagens incríveis de Monte Verde.
+                  </p>
+                  <a
+                    class="font-semibold text-primary hover:underline"
+                    href="#quadriciclo"
+                    >Ver detalhes →</a
+                  >
+                </div>
+              </div>
+              <div
+                class="bg-background-light dark:bg-background-dark rounded shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <img
+                  alt="Casa de fazenda antiga com arquitetura histórica"
+                  class="w-full h-56 object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfU-OVf0GKzyQlTsw1MFNyc6Z2iSVfFkgqWjM_4NTyuTCKffzekA8ZSorOlAG35VB9QqE8crWzCKeeYL-2UoxiAlNhURWwVmm26Y4oSkn5QArEXlSRTBQ1xVY73mCBKIvsyqNMTxVZplqXCc2qmoi9v6QuWyC0CUFexhieQoMEvr9pYn2ebc6pnzPCOjpQH2aMqpGCzB3u0SnHPrldmzbrmlMv4T77cLFwZhEj1ol0V2f5wpcvdzXuLoZR1cr6CP8_LJPSuY-Kkfs"
+                />
+                <div class="p-6">
+                  <div class="flex items-center mb-2">
+                    <span class="material-symbols-outlined text-primary mr-2"
+                      >agriculture</span
+                    >
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                      Fazenda Esperança
+                    </h3>
+                  </div>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-4"
+                  >
+                    Um passeio cultural e relaxante pela histórica Fazenda
+                    Esperança. Conheça a produção local e desfrute da
+                    tranquilidade do campo.
+                  </p>
+                  <a
+                    class="font-semibold text-primary hover:underline"
+                    href="#fazenda"
+                    >Ver detalhes →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-16 sm:py-24 bg-background-light dark:bg-background-dark"
+          id="jeep"
+        >
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white"
+              >
+                Detalhes do Jeep 4x4
+              </h2>
+              <p
+                class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark"
+              >
+                Aventura e paisagens deslumbrantes.
+              </p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+              <div
+                class="lg:w-1/2 relative h-96 rounded-lg overflow-hidden shadow-2xl"
+              >
+                <img
+                  alt="Passeio de Jeep em Monte Verde"
+                  class="w-full h-full object-cover"
+                  src="./images/passeio_de_jeep/passeio_de_jeep25.jpeg"
+                />
+              </div>
+              <div class="lg:w-1/2 space-y-8">
+                <div>
+                  <h3 class="text-2xl font-bold text-primary mb-2">
+                    Pedra Redonda 4x4
+                  </h3>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-3"
+                  >
+                    <span class="font-semibold">Duração:</span> Aproximadamente
+                    2 horas.
+                  </p>
+                  <ul
+                    class="list-disc list-inside space-y-1 text-text-muted-light dark:text-text-muted-dark"
+                  >
+                    <li>Mirante com vista para a cidade</li>
+                    <li>Pico da Pedra Redonda</li>
+                    <li>Trilhas off-road emocionantes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-primary mb-2">
+                    City Tour Panorâmico
+                  </h3>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-3"
+                  >
+                    <span class="font-semibold">Duração:</span> Aproximadamente
+                    1h30.
+                  </p>
+                  <ul
+                    class="list-disc list-inside space-y-1 text-text-muted-light dark:text-text-muted-dark"
+                  >
+                    <li>Principais pontos turísticos de Monte Verde</li>
+                    <li>Paradas para fotos</li>
+                    <li>Conheça a história e curiosidades locais</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-primary mb-2">
+                    Fazenda Esperança (via Jeep)
+                  </h3>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-3"
+                  >
+                    <span class="font-semibold">Duração:</span> Meio período.
+                  </p>
+                  <ul
+                    class="list-disc list-inside space-y-1 text-text-muted-light dark:text-text-muted-dark"
+                  >
+                    <li>Passeio pela fazenda histórica</li>
+                    <li>Museu do Zé Pretinho</li>
+                    <li>Caminhada até o rio</li>
+                  </ul>
+                </div>
+                <div>
+                  <a
+                    href="./pages/jeep.html"
+                    class="inline-block mt-4 bg-primary text-white font-semibold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-transform transform hover:scale-105"
+                  >
+                    Conheça mais sobre o passeio de Jeep
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-16 sm:py-24 bg-surface-light dark:bg-surface-dark"
+          id="quadriciclo"
+        >
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white"
+              >
+                Detalhes do Quadriciclo
+              </h2>
+              <p
+                class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark"
+              >
+                Adrenalina sobre quatro rodas.
+              </p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+              <div
+                class="lg:w-1/2 relative h-80 sm:h-96 rounded-lg overflow-hidden shadow-2xl"
+              >
+                <img
+                  alt="Passeio de quadriciclo nas trilhas de Monte Verde"
+                  class="w-full h-full object-cover"
+                  src="./images/quadriciclo/quadriciclo1.jpeg"
+                  loading="lazy"
+                />
+              </div>
+              <div class="lg:w-1/2 space-y-8">
+                <div
+                  class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg"
+                >
+                  <h3 class="text-2xl font-bold text-primary mb-4">
+                    Passeio Tradicional
+                  </h3>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-2"
+                  >
+                    <span class="font-semibold">Duração:</span> 1 hora.
+                  </p>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark"
+                  >
+                    Roteiro ideal para quem quer ter o primeiro contato com o
+                    quadriciclo, percorrendo trilhas e caminhos rurais com
+                    toda segurança.
+                  </p>
+                </div>
+                <div
+                  class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg"
+                >
+                  <h3 class="text-2xl font-bold text-primary mb-4">
+                    Passeio Pôr do Sol
+                  </h3>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark mb-2"
+                  >
+                    <span class="font-semibold">Duração:</span> 1h30.
+                  </p>
+                  <p
+                    class="text-text-muted-light dark:text-text-muted-dark"
+                  >
+                    Experiência especial para fechar o dia com visual
+                    incrível, combinando aventura nas trilhas com o pôr do sol
+                    na Serra da Mantiqueira.
+                  </p>
+                </div>
+                <p
+                  class="text-text-muted-light dark:text-text-muted-dark text-sm"
+                >
+                  <span class="font-semibold">Ponto de Partida:</span> Base
+                  Monte Verde Passeios (Centro de Monte Verde).
+                </p>
+                <div>
+                  <a
+                    href="./pages/quadriciculo.html"
+                    class="inline-block bg-primary text-white font-semibold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-transform transform hover:scale-105"
+                  >
+                    Conheça mais sobre o passeio de Quadriciclo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-16 sm:py-24 bg-background-light dark:bg-background-dark"
+          id="fazenda"
+        >
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white"
+              >
+                Detalhes da Fazenda Esperança
+              </h2>
+              <p
+                class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark"
+              >
+                História, cultura e natureza em um só lugar.
+              </p>
+            </div>
+            <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+              <div class="lg:w-1/2">
+                <img
+                  alt="Sede da Fazenda Esperança"
+                  class="w-full h-96 object-cover rounded-lg shadow-2xl"
+                  src="./images/fazenda_esperanca/fazenda_esperanca1.jpeg"
+                />
+              </div>
+              <div class="lg:w-1/2">
+                <p
+                  class="text-text-muted-light dark:text-text-muted-dark mb-6 text-lg"
+                >
+                  A Fazenda Esperança é um tesouro histórico na região. Com mais
+                  de 100 anos, preserva a arquitetura e as tradições locais,
+                  oferecendo aos visitantes uma imersão na vida do campo e na
+                  cultura caipira.
+                </p>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <span
+                      class="material-symbols-outlined text-primary mr-3 mt-1"
+                      >hiking</span
+                    >
+                    <div>
+                      <h4
+                        class="font-bold text-lg text-gray-900 dark:text-white"
+                      >
+                        Trilhas e Caminhadas
+                      </h4>
+                      <p
+                        class="text-text-muted-light dark:text-text-muted-dark"
+                      >
+                        Explore a pé as belezas naturais da fazenda.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span
+                      class="material-symbols-outlined text-primary mr-3 mt-1"
+                      >museum</span
+                    >
+                    <div>
+                      <h4
+                        class="font-bold text-lg text-gray-900 dark:text-white"
+                      >
+                        Museu do Zé Pretinho
+                      </h4>
+                      <p
+                        class="text-text-muted-light dark:text-text-muted-dark"
+                      >
+                        Conheça a história local através de um acervo rico.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span
+                      class="material-symbols-outlined text-primary mr-3 mt-1"
+                      >water</span
+                    >
+                    <div>
+                      <h4
+                        class="font-bold text-lg text-gray-900 dark:text-white"
+                      >
+                        Rio e Cachoeira
+                      </h4>
+                      <p
+                        class="text-text-muted-light dark:text-text-muted-dark"
+                      >
+                        Refresque-se nas águas cristalinas do rio que corta a
+                        propriedade.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span
+                      class="material-symbols-outlined text-primary mr-3 mt-1"
+                      >restaurant</span
+                    >
+                    <div>
+                      <h4
+                        class="font-bold text-lg text-gray-900 dark:text-white"
+                      >
+                        Almoço Tradicional
+                      </h4>
+                      <p
+                        class="text-text-muted-light dark:text-text-muted-dark"
+                      >
+                        Saboreie a autêntica comida mineira feita no fogão a
+                        lenha (opcional).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="mt-8">
+                <a
+                  href="./pages/fazenda_esperanca.html"
+                  class="inline-block bg-primary text-white font-semibold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-transform transform hover:scale-105"
+                >
+                  Conheça mais sobre a Fazenda Esperança
+                </a>
+              </div>
+          </div>
+        </section>
+        <section
+          class="py-16 sm:py-24 bg-surface-light dark:bg-surface-dark"
+          id="depoimentos"
+        >
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white"
+              >
+                Depoimentos de Aventureiros
+              </h2>
+              <p
+                class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark"
+              >
+                Veja o que nossos clientes dizem sobre suas experiências.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-lg relative testimonial-card"
+              >
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400">
+                    <span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span>
+                  </div>
+                </div>
+                <p
+                  class="text-text-muted-light dark:text-text-muted-dark mb-4 italic"
+                >
+                  "O passeio de Jeep foi incrível! Vistas de tirar o fôlego e o
+                  guia foi super atencioso. Recomendo a todos que visitam Monte
+                  Verde!"
+                </p>
+                <p class="font-bold text-right text-gray-900 dark:text-white">
+                  - Ana Clara S.
+                </p>
+              </div>
+              <div
+                class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-lg relative testimonial-card"
+              >
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400">
+                    <span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span>
+                  </div>
+                </div>
+                <p
+                  class="text-text-muted-light dark:text-text-muted-dark mb-4 italic"
+                >
+                  "Fizemos o passeio de quadriciclo e foi pura adrenalina. A
+                  equipe é muito profissional e os equipamentos são de primeira.
+                  Valeu muito a pena!"
+                </p>
+                <p class="font-bold text-right text-gray-900 dark:text-white">
+                  - Bruno M.
+                </p>
+              </div>
+              <div
+                class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-lg relative testimonial-card"
+              >
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400">
+                    <span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star</span
+                    ><span class="material-symbols-outlined">star_half</span>
+                  </div>
+                </div>
+                <p
+                  class="text-text-muted-light dark:text-text-muted-dark mb-4 italic"
+                >
+                  "A visita à Fazenda Esperança foi um dia de paz e aprendizado.
+                  A comida é maravilhosa. Um passeio para toda a família."
+                </p>
+                <p class="font-bold text-right text-gray-900 dark:text-white">
+                  - Família Ribeiro
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-16 sm:py-24 bg-background-light dark:bg-background-dark"
+          id="galeria"
+        >
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white"
+              >
+                Galeria de Momentos
+              </h2>
+              <p
+                class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto"
+              >
+                Veja alguns registros reais dos passeios de Jeep 4x4,
+                quadriciclo e da Fazenda Esperança.
+              </p>
+            </div>
+            <div
+              class="relative max-w-5xl mx-auto bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg overflow-hidden"
+            >
+              <div class="relative h-72 sm:h-96">
+                <div
+                  id="main-gallery-track"
+                  class="flex h-full transition-transform duration-500 ease-out"
+                  style="transform: translateX(0);"
+                >
+                  <div class="min-w-full h-full relative">
+                    <img
+                      src="./images/passeio_de_jeep/passeio_de_jeep25.jpeg"
+                      alt="Jeep 4x4 em trilha na Serra da Mantiqueira"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="min-w-full h-full relative">
+                    <img
+                      src="./images/passeio_de_jeep/passeio_de_jeep10.jpeg"
+                      alt="Grupo em passeio de Jeep 4x4 em Monte Verde"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="min-w-full h-full relative">
+                    <img
+                      src="./images/quadriciclo/quadriciclo1.jpeg"
+                      alt="Quadriciclo em trilha de terra em Monte Verde"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="min-w-full h-full relative">
+                    <img
+                      src="./images/quadriciclo/quadriciclo2.jpeg"
+                      alt="Grupo reunido antes do passeio de quadriciclo"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="min-w-full h-full relative">
+                    <img
+                      src="./images/fazenda_esperanca/fazenda_esperanca1.jpeg"
+                      alt="Área verde da Fazenda Esperança em Monte Verde"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="min-w-full h-full relative">
+                    <img
+                      src="./images/fazenda_esperanca/fazenda_esperanca3.jpeg"
+                      alt="Rio e natureza na Fazenda Esperança"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <button
+                  id="main-gallery-prev"
+                  class="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
+                  aria-label="Imagem anterior da galeria"
+                >
+                  <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                  id="main-gallery-next"
+                  class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
+                  aria-label="Próxima imagem da galeria"
+                >
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+                <div
+                  id="main-gallery-dots"
+                  class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2"
+                >
+                  <button
+                    class="w-2.5 h-2.5 rounded-full bg-white/80 border border-white gallery-dot gallery-dot-active"
+                    data-index="0"
+                    aria-label="Ver imagem 1 da galeria"
+                  ></button>
+                  <button
+                    class="w-2.5 h-2.5 rounded-full bg-white/40 border border-white gallery-dot"
+                    data-index="1"
+                    aria-label="Ver imagem 2 da galeria"
+                  ></button>
+                  <button
+                    class="w-2.5 h-2.5 rounded-full bg-white/40 border border-white gallery-dot"
+                    data-index="2"
+                    aria-label="Ver imagem 3 da galeria"
+                  ></button>
+                  <button
+                    class="w-2.5 h-2.5 rounded-full bg-white/40 border border-white gallery-dot"
+                    data-index="3"
+                    aria-label="Ver imagem 4 da galeria"
+                  ></button>
+                  <button
+                    class="w-2.5 h-2.5 rounded-full bg-white/40 border border-white gallery-dot"
+                    data-index="4"
+                    aria-label="Ver imagem 5 da galeria"
+                  ></button>
+                  <button
+                    class="w-2.5 h-2.5 rounded-full bg-white/40 border border-white gallery-dot"
+                    data-index="5"
+                    aria-label="Ver imagem 6 da galeria"
+                  ></button>
+                </div>
+              </div>
+              <div
+                class="px-6 py-6 sm:px-8 sm:py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-gray-200 dark:border-gray-700"
+              >
+                <p
+                  class="text-text-muted-light dark:text-text-muted-dark text-sm sm:text-base max-w-xl"
+                >
+                  Curtiu as fotos? Essas são só algumas das aventuras que já
+                  fizeram parte da nossa história em Monte Verde.
+                </p>
+                <a
+                  href="https://api.whatsapp.com/send?phone=5535998158435&text=Ol%C3%A1%21%20Quero%20fazer%20parte%20da%20galeria%20de%20momentos%20da%20Monte%20Verde%20Passeios."
+                  target="_blank"
+                  class="inline-flex items-center bg-primary text-white font-semibold px-5 py-3 rounded shadow-md hover:bg-primary-darker transition-transform transform hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 mr-2 fill-current"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M.057 24 1.744 17.837C.703 16.033.156 13.988.157 11.891.16 5.335 5.495 0 12.05 0c3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475zM6.597 20.193c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648zM18.584 14.729c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.414z"
+                    />
+                  </svg>
+                  Venha fazer parte da galeria
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400 pt-16 pb-8"
+        id="contato"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8"
+          >
+            <div class="lg:col-span-1">
+              <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-4">
+                Passeios Monte Verde
+              </h3>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./images/logo.png"
+                  alt="Logo Monte Verde Passeios"
+                  class="h-12 w-12 mr-3"
+                />
+                <span class="font-semibold text-gray-800 dark:text-white text-sm">
+                  Jeep 4x4, quadriciclo e experiências únicas na Serra da Mantiqueira.
+                </span>
+              </div>
+              <p>
+                Sua aventura na Serra da Mantiqueira começa aqui. Oferecemos
+                experiências inesquecíveis com segurança e diversão.
+              </p>
+              <div class="flex mt-4 space-x-4">
+                <a
+                  class="text-green-600 hover:text-green-700 transition-colors"
+                  href="https://api.whatsapp.com/send?phone=5535998158435&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20passeio."
+                  target="_blank"
+                  aria-label="WhatsApp Passeios Monte Verde"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="h-7 w-7 fill-current"
+                  >
+                    <path
+                      d="M.057 24 1.744 17.837C.703 16.033.156 13.988.157 11.891.16 5.335 5.495 0 12.05 0c3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475zm6.54-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.414z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  class="text-pink-600 hover:text-pink-700 transition-colors"
+                  href="https://www.instagram.com/monteverdepasseios/"
+                  target="_blank"
+                  aria-label="Instagram Passeios Monte Verde"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="h-7 w-7 fill-current"
+                  >
+                    <path
+                      d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 2.5A5.507 5.507 0 0 0 6.5 12 5.507 5.507 0 0 0 12 17.5 5.507 5.507 0 0 0 17.5 12 5.507 5.507 0 0 0 12 6.5zm0 2A3.505 3.505 0 0 1 15.5 12 3.505 3.505 0 0 1 12 15.5 3.505 3.505 0 0 1 8.5 12 3.505 3.505 0 0 1 12 8.5zM18 5.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="md:col-span-1">
+              <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-4">
+                Links Rápidos
+              </h3>
+              <ul class="space-y-2">
+                <li>
+                  <a class="hover:text-primary transition-colors" href="#inicio"
+                    >Início</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:text-primary transition-colors" href="#jeep"
+                    >Passeio de Jeep</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hover:text-primary transition-colors"
+                    href="#quadriciclo"
+                    >Passeio de Quadriciclo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hover:text-primary transition-colors"
+                    href="#fazenda"
+                    >Fazenda Esperança</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hover:text-primary transition-colors"
+                    href="#galeria"
+                    >Galeria</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="md:col-span-2 lg:col-span-2">
+              <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-4">
+                Nossas Localizações
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-semibold text-gray-700 dark:text-gray-200">
+                    Base Monte Verde
+                  </h4>
+                  <div
+                    class="aspect-w-16 aspect-h-9 mt-2 rounded-lg overflow-hidden bg-gray-300 dark:bg-gray-700 h-40"
+                  >
+                    <iframe
+                      allowfullscreen=""
+                      height="100%"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14828.705118779836!2d-46.04414164478148!3d-22.86016147428801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc1396f4a32369%3A0x673489a3a93663a!2sMonte%20Verde%2C%20Camanducaia%20-%20MG%2C%2037653-000!5e0!3m2!1spt-BR!2sbr!4v1689278456123!5m2!1spt-BR!2sbr"
+                      style="border: 0"
+                      width="100%"
+                    ></iframe>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-700 dark:text-gray-200">
+                    Fazenda Esperança
+                  </h4>
+                  <div
+                    class="aspect-w-16 aspect-h-9 mt-2 rounded-lg overflow-hidden bg-gray-300 dark:bg-gray-700 h-40"
+                  >
+                    <iframe
+                      allowfullscreen=""
+                      height="100%"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14828.705118779836!2d-46.04414164478148!3d-22.86016147428801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc1396f4a32369%3A0x673489a3a93663a!2sMonte%20Verde%2C%20Camanducaia%20-%20MG%2C%2037653-000!5e0!3m2!1spt-BR!2sbr!4v1689278456123!5m2!1spt-BR!2sbr"
+                      style="border: 0"
+                      width="100%"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center"
+          >
+            <p>© 2026 Monte Verde Passeios. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
+      <a
+        aria-label="Fale conosco no WhatsApp"
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-40"
+        href="https://api.whatsapp.com/send?phone=5535998158435&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20passeio."
+        target="_blank"
+      >
+        <svg
+          class="h-8 w-8"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.414z"
+          ></path>
+        </svg>
+      </a>
     </div>
-</body>
 
+    <div id="reviews"></div>
+    <script>
+      (function () {
+        const track = document.getElementById("main-gallery-track");
+        const prevBtn = document.getElementById("main-gallery-prev");
+        const nextBtn = document.getElementById("main-gallery-next");
+        const dotsContainer = document.getElementById("main-gallery-dots");
+        if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+        const slides = Array.from(track.children);
+        const dots = Array.from(dotsContainer.querySelectorAll(".gallery-dot"));
+        let currentIndex = 0;
+        let autoPlayId;
+
+        function updateGallery(index) {
+          if (index < 0) index = slides.length - 1;
+          if (index >= slides.length) index = 0;
+          currentIndex = index;
+          const offset = -index * 100;
+          track.style.transform = `translateX(${offset}%)`;
+          dots.forEach((dot, i) => {
+            if (i === index) {
+              dot.classList.add("gallery-dot-active");
+              dot.classList.replace("bg-white/40", "bg-white/80");
+            } else {
+              dot.classList.remove("gallery-dot-active");
+              dot.classList.replace("bg-white/80", "bg-white/40");
+            }
+          });
+        }
+
+        function next() {
+          updateGallery(currentIndex + 1);
+        }
+
+        function prev() {
+          updateGallery(currentIndex - 1);
+        }
+
+        function startAutoPlay() {
+          stopAutoPlay();
+          autoPlayId = setInterval(next, 6000);
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayId) clearInterval(autoPlayId);
+        }
+
+        nextBtn.addEventListener("click", () => {
+          next();
+          startAutoPlay();
+        });
+
+        prevBtn.addEventListener("click", () => {
+          prev();
+          startAutoPlay();
+        });
+
+        dots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const index = parseInt(dot.getAttribute("data-index"), 10) || 0;
+            updateGallery(index);
+            startAutoPlay();
+          });
+        });
+
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener("touchstart", (e) => {
+          if (!e.touches || !e.touches.length) return;
+          startX = e.touches[0].clientX;
+          isDragging = true;
+          stopAutoPlay();
+        });
+
+        track.addEventListener("touchmove", (e) => {
+          if (!isDragging || !e.touches || !e.touches.length) return;
+        });
+
+        track.addEventListener("touchend", (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          const endX = (e.changedTouches && e.changedTouches[0].clientX) || 0;
+          const diff = endX - startX;
+          if (Math.abs(diff) > 40) {
+            if (diff < 0) next();
+            else prev();
+          }
+          startAutoPlay();
+        });
+
+        window.addEventListener("resize", () => {
+          updateGallery(currentIndex);
+        });
+
+        updateGallery(0);
+        startAutoPlay();
+      })();
+    </script>
+  </body>
+  <div id="reviews"></div>
 </html>
