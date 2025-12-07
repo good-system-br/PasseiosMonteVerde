@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Galeria de Momentos - Monte Verde Passeios</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-S+8y6kGgP1JtGvwxZmfZbV0Gooy2cwrRez2oJ6TP2PzefRg2fzGEylh4G6dkhOCi/hTyBC0bYl1qQhQki71Rug=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#386641",
+                            "primary-darker": "#2A4C31",
+                            "background-light": "#F7F7F7",
+                            "background-dark": "#121212",
+                            "surface-light": "#FFFFFF",
+                            "surface-dark": "#1E1E1E",
+                            "text-light": "#1F2937",
+                            "text-dark": "#E5E7EB",
+                            "text-muted-light": "#6B7280",
+                            "text-muted-dark": "#9CA3AF",
+                        },
+                        fontFamily: {
+                            display: ["Roboto", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.5rem",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+    >
+        <div class="relative" id="root">
+            <!-- HEADER -->
+            <header
+                class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-md"
+            >
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-20">
+                        <a class="flex items-center" href="/index.html#inicio">
+                            <img
+                                alt="Monte Verde Passeios Logo"
+                                class="h-16 w-16 mr-4"
+                                src="../images/logo.png"
+                            />
+                            <span
+                                class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block"
+                                >Passeios Monte Verde</span
+                            >
+                        </a>
+                        <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#jeep"
+                                >Jeep 4x4</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#quadriciclo"
+                                >Quadriciclo</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#fazenda"
+                                >Fazenda</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#depoimentos"
+                                >Depoimentos</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="#inicio"
+                                >Galeria</a
+                            >
+                            <a
+                                class="bg-primary text-white font-bold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-colors"
+                                href="https://api.whatsapp.com/send?phone=5535998158435"
+                                target="_blank"
+                                >Fale Conosco</a
+                            >
+                        </nav>
+                        <div class="flex md:hidden">
+                            <button
+                                id="mobile-menu-toggle"
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                                aria-label="Abrir menu de navegação"
+                            >
+                                <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MENU MOBILE -->
+            <nav
+                id="mobile-menu"
+                class="md:hidden fixed top-20 inset-x-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur border-b border-gray-200/80 dark:border-gray-800/80 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-200 ease-out shadow-lg"
+            >
+                <div class="px-4 pb-4 space-y-1">
+                    <a
+                        href="/index.html#jeep"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Jeep 4x4
+                    </a>
+                    <a
+                        href="/index.html#quadriciclo"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Quadriciclo
+                    </a>
+                    <a
+                        href="/index.html#fazenda"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Fazenda
+                    </a>
+                    <a
+                        href="/index.html#depoimentos"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Depoimentos
+                    </a>
+                    <a
+                        href="#inicio"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                        Galeria
+                    </a>
+                    <a
+                        href="https://api.whatsapp.com/send?phone=5535998158435"
+                        target="_blank"
+                        class="mt-2 flex items-center justify-center gap-2 w-full bg-primary text-white font-semibold py-2.5 px-4 rounded-md shadow-md hover:bg-primary-darker transition-colors"
+                    >
+                        <span>Fale Conosco</span>
+                    </a>
+                </div>
+            </nav>
+
+            <main class="pt-24" id="inicio">
+                <section class="py-16 bg-surface-light dark:bg-surface-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-10">
+                            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+                                Galeria de Momentos
+                            </h1>
+                            <p class="mt-2 text-lg text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+                                Explore registros reais dos passeios de Jeep 4x4, quadriciclo e da Fazenda Esperança.
+                                Clique nas imagens para ver em tela cheia.
+                            </p>
+                        </div>
+                        <div
+                            id="gallery-grid"
+                            class="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                        >
+                            <figure class="relative cursor-pointer overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src="../images/passeio_de_jeep/passeio_de_jeep25.jpeg"
+                                    alt="Jeep 4x4 em trilha na Serra da Mantiqueira"
+                                    class="w-full h-40 sm:h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                            </figure>
+                            <figure class="relative cursor-pointer overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src="../images/passeio_de_jeep/passeio_de_jeep10.jpeg"
+                                    alt="Grupo em passeio de Jeep 4x4 em Monte Verde"
+                                    class="w-full h-40 sm:h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                            </figure>
+                            <figure class="relative cursor-pointer overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src="../images/quadriciclo/quadriciclo1.jpeg"
+                                    alt="Quadriciclo em trilha de terra em Monte Verde"
+                                    class="w-full h-40 sm:h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                            </figure>
+                            <figure class="relative cursor-pointer overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src="../images/quadriciclo/quadriciclo2.jpeg"
+                                    alt="Grupo reunido antes do passeio de quadriciclo"
+                                    class="w-full h-40 sm:h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                            </figure>
+                            <figure class="relative cursor-pointer overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src="../images/fazenda_esperanca/fazenda_esperanca1.jpeg"
+                                    alt="Área verde da Fazenda Esperança em Monte Verde"
+                                    class="w-full h-40 sm:h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                            </figure>
+                            <figure class="relative cursor-pointer overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src="../images/fazenda_esperanca/fazenda_esperanca3.jpeg"
+                                    alt="Rio e natureza na Fazenda Esperança"
+                                    class="w-full h-40 sm:h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- LIGHTBOX / CARROSSEL GALERIA -->
+            <div
+                id="lightbox-galeria"
+                class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity"
+                aria-hidden="true"
+            >
+                <button
+                    id="lightbox-galeria-close"
+                    class="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
+                    aria-label="Fechar galeria de fotos"
+                >
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+                <button
+                    id="lightbox-galeria-prev"
+                    class="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
+                    aria-label="Imagem anterior da galeria"
+                >
+                    <span class="material-symbols-outlined text-3xl">chevron_left</span>
+                </button>
+                <button
+                    id="lightbox-galeria-next"
+                    class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
+                    aria-label="Próxima imagem da galeria"
+                >
+                    <span class="material-symbols-outlined text-3xl">chevron_right</span>
+                </button>
+                <div class="max-w-5xl w-full px-4">
+                    <div class="relative bg-black/60 rounded-lg overflow-hidden flex flex-col items-center justify-start max-h-[90vh] mt-10">
+                        <img id="lightbox-galeria-image" src="" alt="" class="max-h-[70vh] w-auto object-contain" />
+                        <p id="lightbox-galeria-caption" class="text-sm text-gray-100 mt-3 mb-4 px-4 text-center"></p>
+                        <p id="lightbox-galeria-counter" class="text-xs text-gray-300 mb-3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer
+                class="bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400 pt-16 pb-8 mt-8"
+                id="contato"
+            >
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+                        <div class="lg:col-span-1">
+                            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-4">
+                                Monte Verde Passeios
+                            </h3>
+                            <p class="text-text-muted-light dark:text-text-muted-dark mb-3">
+                                Passeios de Jeep 4x4, quadriciclo e experiências na Fazenda Esperança em Monte
+                                Verde - MG.
+                            </p>
+                            <p class="text-text-muted-light dark:text-text-muted-dark text-sm">
+                                Atendimento personalizado para casais, famílias e grupos.
+                            </p>
+                        </div>
+                        <div class="md:col-span-1">
+                            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-4">
+                                Contato
+                            </h3>
+                            <ul class="space-y-2 text-sm">
+                                <li>
+                                    <span class="font-semibold">WhatsApp:</span>
+                                    <a
+                                        href="https://api.whatsapp.com/send?phone=5535998158435"
+                                        target="_blank"
+                                        class="text-primary hover:underline"
+                                        >+55 (35) 99815-8435</a
+                                    >
+                                </li>
+                                <li>
+                                    <span class="font-semibold">Instagram:</span>
+                                    <a
+                                        href="https://www.instagram.com/monte_verde_passeios/"
+                                        target="_blank"
+                                        class="text-primary hover:underline"
+                                        >@monte_verde_passeios</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-2 lg:col-span-2">
+                            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-4">
+                                Localização
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 dark:text-gray-200">
+                                        Base Monte Verde
+                                    </h4>
+                                    <div
+                                        class="aspect-w-16 aspect-h-9 mt-2 rounded-lg overflow-hidden bg-gray-300 dark:bg-gray-700 h-40"
+                                    >
+                                        <iframe
+                                            allowfullscreen=""
+                                            height="100%"
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14828.705118779836!2d-46.04414164478148!3d-22.86016147428801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc1396f4a32369%3A0x673489a3a93663a!2sMonte%20Verde%2C%20Camanducaia%20-%20MG%2C%2037653-000!5e0!3m2!1spt-BR!2sbr!4v1689278456123!5m2!1spt-BR!2sbr"
+                                            style="border: 0"
+                                            width="100%"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 dark:text-gray-200">
+                                        Fazenda Esperança
+                                    </h4>
+                                    <div
+                                        class="aspect-w-16 aspect-h-9 mt-2 rounded-lg overflow-hidden bg-gray-300 dark:bg-gray-700 h-40"
+                                    >
+                                        <iframe
+                                            allowfullscreen=""
+                                            height="100%"
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14828.705118779836!2d-46.04414164478148!3d-22.86016147428801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc1396f4a32369%3A0x673489a3a93663a!2sMonte%20Verde%2C%20Camanducaia%20-%20MG%2C%2037653-000!5e0!3m2!1spt-BR!2sbr!4v1689278456123!5m2!1spt-BR!2sbr"
+                                            style="border: 0"
+                                            width="100%"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center"
+                    >
+                        <p>© 2026 Monte Verde Passeios. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- WHATSAPP FLOAT -->
+            <a
+                aria-label="Fale conosco no WhatsApp"
+                class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-40"
+                href="https://api.whatsapp.com/send?phone=5535998158435&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20passeio."
+                target="_blank"
+            >
+                <svg
+                    class="h-8 w-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.414z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+
+        <script>
+            (function () {
+                const toggleButton = document.getElementById("mobile-menu-toggle");
+                const mobileMenu = document.getElementById("mobile-menu");
+                const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+
+                if (toggleButton && mobileMenu && mobileMenuIcon) {
+                    let isOpen = false;
+
+                    const setMenu = (open) => {
+                        isOpen = open;
+                        if (isOpen) {
+                            mobileMenu.classList.remove(
+                                "-translate-y-full",
+                                "opacity-0",
+                                "pointer-events-none",
+                            );
+                            mobileMenu.classList.add("translate-y-0", "opacity-100");
+                            mobileMenuIcon.textContent = "close";
+                            toggleButton.setAttribute("aria-label", "Fechar menu de navegação");
+                        } else {
+                            mobileMenu.classList.add(
+                                "-translate-y-full",
+                                "opacity-0",
+                                "pointer-events-none",
+                            );
+                            mobileMenu.classList.remove("translate-y-0", "opacity-100");
+                            mobileMenuIcon.textContent = "menu";
+                            toggleButton.setAttribute("aria-label", "Abrir menu de navegação");
+                        }
+                    };
+
+                    toggleButton.addEventListener("click", () => {
+                        setMenu(!isOpen);
+                    });
+
+                    mobileMenu.addEventListener("click", (event) => {
+                        if (event.target.closest("a")) {
+                            setMenu(false);
+                        }
+                    });
+
+                    window.addEventListener("resize", () => {
+                        if (window.innerWidth >= 768 && isOpen) {
+                            setMenu(false);
+                        }
+                    });
+                }
+            })();
+        </script>
+
+        <script>
+            (function () {
+                const figures = Array.from(document.querySelectorAll("#gallery-grid figure"));
+                const lightbox = document.getElementById("lightbox-galeria");
+                const imgEl = document.getElementById("lightbox-galeria-image");
+                const captionEl = document.getElementById("lightbox-galeria-caption");
+                const counterEl = document.getElementById("lightbox-galeria-counter");
+                const btnClose = document.getElementById("lightbox-galeria-close");
+                const btnPrev = document.getElementById("lightbox-galeria-prev");
+                const btnNext = document.getElementById("lightbox-galeria-next");
+
+                if (!figures.length || !lightbox) return;
+
+                let currentIndex = 0;
+                const originalBodyOverflow = document.body.style.overflow;
+                const originalBodyTouchAction = document.body.style.touchAction;
+
+                const openLightbox = (index) => {
+                    currentIndex = index;
+                    const img = figures[currentIndex].querySelector("img");
+                    if (!img) return;
+
+                    imgEl.src = img.src;
+                    imgEl.alt = img.alt || "";
+                    captionEl.textContent = img.alt || "";
+                    counterEl.textContent = `${currentIndex + 1} / ${figures.length}`;
+
+                    document.body.style.overflow = "hidden";
+                    document.body.style.touchAction = "none";
+
+                    lightbox.classList.remove("pointer-events-none");
+                    lightbox.setAttribute("aria-hidden", "false");
+                    requestAnimationFrame(() => {
+                        lightbox.classList.add("opacity-100");
+                    });
+                };
+
+                const closeLightbox = () => {
+                    lightbox.classList.remove("opacity-100");
+                    lightbox.setAttribute("aria-hidden", "true");
+                    setTimeout(() => {
+                        lightbox.classList.add("pointer-events-none");
+                        imgEl.src = "";
+                        document.body.style.overflow = originalBodyOverflow;
+                        document.body.style.touchAction = originalBodyTouchAction;
+                    }, 200);
+                };
+
+                const showNext = () => {
+                    currentIndex = (currentIndex + 1) % figures.length;
+                    openLightbox(currentIndex);
+                };
+
+                const showPrev = () => {
+                    currentIndex = (currentIndex - 1 + figures.length) % figures.length;
+                    openLightbox(currentIndex);
+                };
+
+                let touchStartX = 0;
+                let touchEndX = 0;
+                const swipeThreshold = 40;
+
+                const onTouchStart = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    touchStartX = e.touches[0].clientX;
+                    touchEndX = touchStartX;
+                };
+
+                const onTouchMove = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    touchEndX = e.touches[0].clientX;
+                };
+
+                const onTouchEnd = () => {
+                    const diffX = touchEndX - touchStartX;
+                    if (Math.abs(diffX) < swipeThreshold) return;
+
+                    if (diffX < 0) {
+                        showNext();
+                    } else {
+                        showPrev();
+                    }
+                };
+
+                figures.forEach((figure, index) => {
+                    figure.addEventListener("click", () => openLightbox(index));
+                    figure.setAttribute(
+                        "aria-label",
+                        "Abrir imagem da galeria em tela cheia",
+                    );
+                });
+
+                btnClose.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    closeLightbox();
+                });
+                btnNext.addEventListener("click", showNext);
+                btnPrev.addEventListener("click", showPrev);
+
+                lightbox.addEventListener("click", (e) => {
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+
+                document.addEventListener("keydown", (e) => {
+                    if (lightbox.getAttribute("aria-hidden") === "true") return;
+                    if (e.key === "Escape") closeLightbox();
+                    if (e.key === "ArrowRight") showNext();
+                    if (e.key === "ArrowLeft") showPrev();
+                });
+
+                lightbox.addEventListener("touchstart", onTouchStart, {
+                    passive: true,
+                });
+                lightbox.addEventListener("touchmove", onTouchMove, { passive: true });
+                lightbox.addEventListener("touchend", onTouchEnd);
+            })();
+        </script>
+    </body>
+</html>
