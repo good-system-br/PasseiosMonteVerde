@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Passeio de Quadriciclo - Monte Verde Passeios</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#386641",
+                            "primary-darker": "#2A4C31",
+                            "background-light": "#F7F7F7",
+                            "background-dark": "#121212",
+                            "surface-light": "#FFFFFF",
+                            "surface-dark": "#1E1E1E",
+                            "text-light": "#1F2937",
+                            "text-dark": "#E5E7EB",
+                            "text-muted-light": "#6B7280",
+                            "text-muted-dark": "#9CA3AF",
+                        },
+                        fontFamily: {
+                            display: ["Roboto", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.5rem",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+    >
+        <div class="relative" id="root">
+            <!-- HEADER -->
+            <header
+                class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-md"
+            >
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-20">
+                        <a class="flex items-center" href="/index.html#inicio">
+                            <img
+                                alt="Monte Verde Passeios Logo"
+                                class="h-16 w-16 mr-4"
+                                src="../images/logo.png"
+                            />
+                            <span
+                                class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block"
+                                >Monte Verde Passeios</span
+                            >
+                        </a>
+                        <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#jeep"
+                                >Jeep 4x4</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#quadriciclo"
+                                >Quadriciclo</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#fazenda"
+                                >Fazenda</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#depoimentos"
+                                >Depoimentos</a
+                            >
+                            <a
+                                class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                                href="/index.html#galeria"
+                                >Galeria</a
+                            >
+                            <a
+                                class="bg-primary text-white font-bold py-2 px-6 rounded shadow-md hover:bg-primary-darker transition-colors"
+                                href="https://api.whatsapp.com/send?phone=5535998158435"
+                                target="_blank"
+                                >Fale Conosco</a
+                            >
+                        </nav>
+                        <div class="flex md:hidden">
+                            <button class="text-gray-800 dark:text-white">
+                                <span class="material-symbols-outlined">menu</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="pt-24">
+                <!-- HERO QUADRICICLO -->
+                <section class="py-16 bg-surface-light dark:bg-surface-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <p class="text-sm uppercase tracking-wide text-primary font-semibold mb-2">
+                                Detalhes do Passeio
+                            </p>
+                            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                                Aventura de Quadriciclo em Monte Verde
+                            </h1>
+                            <p class="text-lg text-text-muted-light dark:text-text-muted-dark mb-6">
+                                Sinta a adrenalina nas trilhas de Monte Verde pilotando um quadriciclo
+                                com toda segurança. Roteiros guiados para todos os níveis, passando por
+                                mirantes, trilhas de terra e cenários perfeitos para fotos inesquecíveis.
+                            </p>
+                            <div class="space-y-2 text-text-muted-light dark:text-text-muted-dark mb-6">
+                                <p><strong class="text-text-light dark:text-text-dark">Ponto de partida:</strong> Base Monte Verde Passeios, Monte Verde - MG.</p>
+                                <p><strong class="text-text-light dark:text-text-dark">Contato/Reserva:</strong> WhatsApp +55 (35) 99815-8435.</p>
+                            </div>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=5535998158435&text=Ol%C3%A1%2C%20gostaria%20de%20informações%20sobre%20o%20passeio%20de%20quadriciclo"
+                                target="_blank"
+                                class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded shadow-lg hover:bg-primary-darker transition-transform transform hover:scale-105"
+                            >
+                                <span class="material-symbols-outlined mr-2">whatsapp</span>
+                                Reservar passeio de quadriciclo
+                            </a>
+                        </div>
+                        <div class="relative h-72 sm:h-96 rounded-lg overflow-hidden shadow-2xl">
+                            <img
+                                src="../images/quadriciclo/quadriciclo1.jpeg"
+                                alt="Quadriciclo em trilha de terra nas montanhas de Monte Verde"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <p class="font-semibold text-lg">Aventura sobre quatro rodas</p>
+                                <p class="text-sm text-gray-100">Monte Verde Passeios • Quadriciclo</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OPÇÕES DE PASSEIO DE QUADRICICLO -->
+                <section class="py-16 bg-background-light dark:bg-background-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                            Opções de Passeio de Quadriciclo
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <article class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-md flex flex-col">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    Passeio Tradicional de Quadriciclo
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">
+                                    Ideal para quem quer ter o primeiro contato com o quadriciclo e
+                                    sentir a emoção das trilhas de Monte Verde com segurança e paisagens
+                                    incríveis.
+                                </p>
+                                <ul class="space-y-1 text-text-muted-light dark:text-text-muted-dark mb-4 text-sm">
+                                    <li><strong>Duração:</strong> 1 hora</li>
+                                </ul>
+                                <p class="text-text-muted-light dark:text-text-muted-dark text-sm mt-auto">
+                                    Percurso guiado em grupo, com orientações de segurança e paradas para fotos
+                                    em pontos estratégicos das trilhas.
+                                </p>
+                            </article>
+
+                            <article class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-md flex flex-col">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    Passeio de Quadriciclo no Pôr do Sol
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">
+                                    Uma experiência única para aproveitar o fim de tarde nas montanhas,
+                                    com vistas privilegiadas do pôr do sol de Monte Verde em meio à natureza.
+                                </p>
+                                <ul class="space-y-1 text-text-muted-light dark:text-text-muted-dark mb-4 text-sm">
+                                    <li><strong>Duração:</strong> 1h30</li>
+                                    <li><strong>Diferencial:</strong> Visual incrível garantido no pôr do sol.</li>
+                                </ul>
+                                <p class="text-text-muted-light dark:text-text-muted-dark text-sm mt-auto">
+                                    Roteiro especial com parada estratégica em mirante para contemplar o
+                                    espetáculo do pôr do sol e registrar fotos inesquecíveis.
+                                </p>
+                            </article>
+                        </div>
+
+                        <div class="mt-10 max-w-2xl mx-auto bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                Ponto de Partida e Localização
+                            </h3>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-3">
+                                Os passeios de quadriciclo saem da base em Monte Verde (Camanducaia, MG),
+                                em localização de fácil acesso.
+                            </p>
+                            <a
+                                href="https://www.google.com/maps/place/monte+verde/data=!4m2!3m1!1s0x94cc103f1694fca5:0xef5416e893de18e0?sa=X&ved=1t:155783&ictx=111"
+                                target="_blank"
+                                class="inline-flex items-center text-primary font-semibold text-sm hover:text-primary-darker"
+                            >
+                                <span class="material-symbols-outlined mr-1 text-base">pin_drop</span>
+                                Ver ponto de partida no mapa
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GALERIA DE QUADRICICLO (COM LIGHTBOX / CARROSSEL) -->
+                <section class="py-16 bg-surface-light dark:bg-surface-dark">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-10">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                                Galeria do Passeio de Quadriciclo
+                            </h2>
+                            <p class="mt-2 text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+                                Alguns registros dos passeios de quadriciclo em Monte Verde: trilhas,
+                                mirantes, grupos animados e o visual das montanhas.
+                            </p>
+                        </div>
+                        <div class="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4" id="quad-gallery">
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="0">
+                                <img src="../images/quadriciclo/quadriciclo1.jpeg" alt="Quadriciclo em trilha de terra em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="1">
+                                <img src="../images/quadriciclo/quadriciclo2.jpeg" alt="Grupo antes do passeio de quadriciclo em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="2">
+                                <img src="../images/quadriciclo/quadriciclo3.jpeg" alt="Quadriciclos alinhados prontos para saída" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="3">
+                                <img src="../images/quadriciclo/quadriciclo4.jpeg" alt="Piloto de quadriciclo em trilha cercada por natureza" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="4">
+                                <img src="../images/quadriciclo/quadriciclo5.jpeg" alt="Vista de montanhas durante passeio de quadriciclo" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="5">
+                                <img src="../images/quadriciclo/quadriciclo6.jpeg" alt="Trilha de terra percorrida pelos quadriciclos em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="6">
+                                <img src="../images/quadriciclo/quadriciclo7.jpeg" alt="Grupo em quadriciclos durante passeio em Monte Verde" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                            <figure class="overflow-hidden rounded-lg shadow-md cursor-pointer" data-index="7">
+                                <img src="../images/quadriciclo/quadriciclo8.jpeg" alt="Quadriciclo em ponto de parada com vista para as montanhas" class="w-full h-40 sm:h-44 object-cover hover:scale-105 transition-transform" loading="lazy" />
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- LIGHTBOX / CARROSSEL QUADRICICLO -->
+            <div
+                id="lightbox-quad"
+                class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity"
+                aria-hidden="true"
+            >
+                <button
+                    id="lightbox-quad-close"
+                    class="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
+                    aria-label="Fechar galeria de quadriciclo"
+                >
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+                <button
+                    id="lightbox-quad-prev"
+                    class="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
+                    aria-label="Imagem anterior de quadriciclo"
+                >
+                    <span class="material-symbols-outlined text-3xl">chevron_left</span>
+                </button>
+                <button
+                    id="lightbox-quad-next"
+                    class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-8 text-white bg-black/40 rounded-full p-2 hover:bg-black/60 z-50"
+                    aria-label="Próxima imagem de quadriciclo"
+                >
+                    <span class="material-symbols-outlined text-3xl">chevron_right</span>
+                </button>
+                <div class="max-w-5xl w-full px-4">
+                    <div class="relative bg-black/60 rounded-lg overflow-hidden flex flex-col items-center justify-start max-h-[90vh] mt-10">
+                        <img id="lightbox-quad-image" src="" alt="" class="max-h-[70vh] w-auto object-contain" />
+                        <p id="lightbox-quad-caption" class="text-sm text-gray-100 mt-3 mb-4 px-4 text-center"></p>
+                        <p id="lightbox-quad-counter" class="text-xs text-gray-300 mb-3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer
+                class="bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400 pt-16 pb-8"
+                id="contato"
+            >
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8"
+                    >
+                        <div class="lg:col-span-1">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                                Monte Verde Passeios
+                            </h3>
+                            <p class="text-text-muted-light dark:text-text-muted-dark text-sm mb-2">
+                                Passeios de Jeep 4x4, quadriciclo e experiências únicas na Serra da Mantiqueira.
+                            </p>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                WhatsApp: <a href="https://api.whatsapp.com/send?phone=5535998158435" target="_blank" class="text-primary font-semibold">(35) 99815-8435</a>
+                            </p>
+                        </div>
+                        <div class="md:col-span-1">
+                            <h4 class="text-md font-semibold text-gray-900 dark:text-white mb-4">
+                                Links rápidos
+                            </h4>
+                            <ul class="space-y-2 text-sm text-text-muted-light dark:text-text-muted-dark">
+                                <li><a href="/index.html#jeep" class="hover:text-primary">Jeep 4x4</a></li>
+                                <li><a href="/index.html#quadriciclo" class="hover:text-primary">Quadriciclo</a></li>
+                                <li><a href="/index.html#fazenda" class="hover:text-primary">Fazenda Esperança</a></li>
+                                <li><a href="/index.html#galeria" class="hover:text-primary">Galeria</a></li>
+                                <li><a href="/index.html#depoimentos" class="hover:text-primary">Depoimentos</a></li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-2 lg:col-span-2">
+                            <h4 class="text-md font-semibold text-gray-900 dark:text-white mb-4">
+                                Localização
+                            </h4>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-2">
+                                Base em Monte Verde, Camanducaia - MG.
+                            </p>
+                            <div class="aspect-video w-full rounded overflow-hidden shadow-md bg-gray-300">
+                                <iframe
+                                    class="w-full h-full border-0"
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.770589108425!2d-46.045!3d-22.861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc103f1694fca5%3A0xef5416e893de18e0!2sMonte%20Verde%2C%20Camanducaia%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                                    allowfullscreen=""
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center"
+                    >
+                        <p>© 2024 Monte Verde Passeios. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- WHATSAPP FLOAT -->
+            <a
+                aria-label="Fale conosco no WhatsApp"
+                class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-40"
+                href="https://api.whatsapp.com/send?phone=5535998158435"
+                target="_blank"
+            >
+                <svg
+                    class="h-8 w-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.414z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+
+        <script>
+            (function () {
+                const figures = Array.from(document.querySelectorAll('#quad-gallery figure'));
+                const lightbox = document.getElementById('lightbox-quad');
+                const imgEl = document.getElementById('lightbox-quad-image');
+                const captionEl = document.getElementById('lightbox-quad-caption');
+                const counterEl = document.getElementById('lightbox-quad-counter');
+                const btnClose = document.getElementById('lightbox-quad-close');
+                const btnPrev = document.getElementById('lightbox-quad-prev');
+                const btnNext = document.getElementById('lightbox-quad-next');
+
+                if (!figures.length || !lightbox) return;
+
+                let currentIndex = 0;
+                const originalBodyOverflow = document.body.style.overflow;
+                const originalBodyTouchAction = document.body.style.touchAction;
+
+                const openLightbox = (index) => {
+                    currentIndex = index;
+                    const img = figures[currentIndex].querySelector('img');
+                    if (!img) return;
+
+                    imgEl.src = img.src;
+                    imgEl.alt = img.alt || '';
+                    captionEl.textContent = img.alt || '';
+                    counterEl.textContent = `${currentIndex + 1} / ${figures.length}`;
+
+                    // Bloqueia scroll de fundo enquanto o lightbox estiver aberto
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.touchAction = 'none';
+
+                    lightbox.classList.remove('pointer-events-none');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    requestAnimationFrame(() => {
+                        lightbox.classList.add('opacity-100');
+                    });
+                };
+
+                const closeLightbox = () => {
+                    lightbox.classList.remove('opacity-100');
+                    lightbox.setAttribute('aria-hidden', 'true');
+                    setTimeout(() => {
+                        lightbox.classList.add('pointer-events-none');
+                        imgEl.src = '';
+                        // Restaura comportamento de scroll padrão ao fechar o lightbox
+                        document.body.style.overflow = originalBodyOverflow;
+                        document.body.style.touchAction = originalBodyTouchAction;
+                    }, 200);
+                };
+
+                const showNext = () => {
+                    currentIndex = (currentIndex + 1) % figures.length;
+                    openLightbox(currentIndex);
+                };
+
+                const showPrev = () => {
+                    currentIndex = (currentIndex - 1 + figures.length) % figures.length;
+                    openLightbox(currentIndex);
+                };
+
+                // Suporte a swipe (arrastar) para mobile
+                let touchStartX = 0;
+                let touchEndX = 0;
+                const swipeThreshold = 40; // px mínimos para considerar swipe
+
+                const onTouchStart = (e) => {
+                    if (!e.touches || e.touches.length === 0) return;
+                    touchStartX = e.touches[0].clientX;
+                };
+
+                const onTouchMove = (e) => {
+                    if (!e.touches || e.touches.length === 0) return;
+                    touchEndX = e.touches[0].clientX;
+                };
+
+                const onTouchEnd = () => {
+                    const deltaX = touchEndX - touchStartX;
+                    if (Math.abs(deltaX) < swipeThreshold) return;
+
+                    if (deltaX < 0) {
+                        // arrastou para a esquerda -> próxima imagem
+                        showNext();
+                    } else {
+                        // arrastou para a direita -> imagem anterior
+                        showPrev();
+                    }
+                };
+
+                figures.forEach((figure, index) => {
+                    figure.addEventListener('click', () => openLightbox(index));
+                    figure.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openLightbox(index);
+                        }
+                    });
+                    figure.setAttribute('tabindex', '0');
+                    figure.setAttribute('role', 'button');
+                    figure.setAttribute('aria-label', 'Abrir imagem de quadriciclo em tela cheia');
+                });
+
+                btnClose.addEventListener('click', closeLightbox);
+                btnNext.addEventListener('click', showNext);
+                btnPrev.addEventListener('click', showPrev);
+
+                lightbox.addEventListener('click', (e) => {
+                    // Fecha apenas quando o clique é diretamente no fundo escuro,
+                    // não em elementos filhos (imagem, botões, etc.).
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') showNext();
+                    if (e.key === 'ArrowLeft') showPrev();
+                });
+
+                // listeners de swipe no próprio lightbox (funciona em mobile)
+                lightbox.addEventListener('touchstart', onTouchStart, { passive: true });
+                lightbox.addEventListener('touchmove', onTouchMove, { passive: true });
+                lightbox.addEventListener('touchend', onTouchEnd);
+            })();
+        </script>
+    </body>
+</html>
